@@ -4,7 +4,7 @@
 #include <sodium/crypto_sign.h>
 
 #include "identity.h"
-#include "../../shared/include/result.h"
+#include "shared/result.h"
 
 #define signature_BYTES crypto_sign_BYTES
 

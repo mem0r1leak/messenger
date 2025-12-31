@@ -4,7 +4,7 @@
 #include <setjmp.h>
 #include <cmocka.h>
 
-#include "../../core/include/account.h"
+#include "core/account.h"
 
 static void test_account_create() {
     User u = {0};

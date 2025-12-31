@@ -5,7 +5,7 @@
 #include <stdbool.h>
 #include <stddef.h>
 
-#include "../include/identity.h"
+#include "crypto/identity.h"
 
 result_t identity_generate(
     uint8_t master_key[identity_MASTERKEYBYTES],

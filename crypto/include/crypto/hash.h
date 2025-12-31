@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include <sodium/crypto_hash_sha256.h>
 
-#include "result.h"
+#include "shared/result.h"
 
 #define hash_BYTES crypto_hash_sha256_BYTES
 

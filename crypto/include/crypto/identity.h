@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include <sodium.h>
 
-#include "../../shared/include/result.h"
+#include "shared/result.h"
 
 #define identity_MASTERKEYBYTES crypto_box_SEEDBYTES
 #define identity_sign_SECRETKEYBYTES crypto_sign_SECRETKEYBYTES

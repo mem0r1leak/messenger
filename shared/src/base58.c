@@ -12,7 +12,7 @@
 #include <stdint.h>
 #include <string.h>
 
-#include "base58.h"
+#include "shared/base58.h"
 
 static const int8_t b58digits_map[] = {
 	-1,-1,-1,-1,-1,-1,-1,-1, -1,-1,-1,-1,-1,-1,-1,-1,

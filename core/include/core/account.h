@@ -2,9 +2,9 @@
 
 #include <stdint.h>
 
-#include "../../shared/include/result.h"
-#include "../../crypto/include/identity.h"
-#include "../../crypto/include/sign.h"
+#include "shared/result.h"
+#include "crypto/identity.h"
+#include "crypto/sign.h"
 
 #define account_NAMEBYTES 64
 #define account_USERIDBYTES 32

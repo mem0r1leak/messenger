@@ -1,4 +1,4 @@
-#include "sign.h"
+#include "crypto/sign.h"
 
 result_t cryptosign(
     uint8_t signature[signature_BYTES], const uint8_t *message, unsigned long long message_len,

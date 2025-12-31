@@ -1,8 +1,8 @@
 #include <string.h>
 
-#include "account.h"
-#include "hash.h"
-#include "base58.h"
+#include "core/account.h"
+#include "crypto/hash.h"
+#include "shared/base58.h"
 
 result_t account_create(User *u, const char *name, const char *username_prefix) {
     if (strlen(name) > 64) {
