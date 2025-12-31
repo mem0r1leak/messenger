@@ -5,6 +5,7 @@
 #include <cmocka.h>
 
 #include "core/account.h"
+#include "shared/result.h"
 
 static void test_account_create() {
     User u = {0};
@@ -71,4 +72,26 @@ static void test_account_import(void **state) {
     assert_int_equal(res1, OK);
     assert_int_equal(res2, OK);
     assert_memory_equal(u1.user_id, u2.user_id, account_USERIDBYTES);
+}
+
+static void test_account_verify() {
+    User u_valid = {0};
+    User u_invalid = {0};
+
+    const char *name = "Alice";
+    const char *prefix = "alice";
+
+    account_create(&u_valid, name, prefix);
+    account_create(&u_invalid, name, prefix);
+
+    // It makes signature invalid
+    u_invalid.signature[8] = 0xd9;
+    u_invalid.signature[2] = 0x04;
+    u_invalid.signature[36] = 0xf6;
+
+    result_t res1 = account_verify(&u_valid);
+    result_t res2 = account_verify(&u_invalid);
+
+    assert_int_equal(res1, OK);
+    assert_int_equal(res2, CORE_ACCOUNT_INVALID);
 }
