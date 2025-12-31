@@ -2,6 +2,7 @@
 
 #include "core/account.h"
 #include "crypto/hash.h"
+#include "crypto/sign.h"
 #include "shared/base58.h"
 
 result_t account_create(User *u, const char *name, const char *username_prefix) {
@@ -135,6 +136,31 @@ result_t account_import(User *u, const uint8_t master_key[32]) {
 
     cryptohash(hash, buffer, offest);
     cryptosign(u->signature, hash, hash_BYTES, u->sk_signature);
+
+    return OK;
+}
+
+result_t account_verify(User *u) {
+    uint8_t buffer[512] = {0};
+    uint8_t hash[signature_BYTES];
+    int offest = 0;
+
+    memcpy(buffer, u->user_id, 32);
+    offest += 32;
+    memcpy(buffer + offest, u->pk_encryption, crypto_box_PUBLICKEYBYTES);
+    offest += crypto_box_PUBLICKEYBYTES;
+    memcpy(buffer + offest, u->pk_signature, crypto_sign_PUBLICKEYBYTES);
+    offest += crypto_sign_PUBLICKEYBYTES;
+    memcpy(buffer + offest, u->username, strlen(u->username));
+    offest += strlen(u->username);
+    memcpy(buffer + offest, u->name, strlen(u->name));
+    offest += strlen(u->name);
+
+    cryptohash(hash, buffer, offest);
+
+    if (crypto_sign_verify(u->signature, hash, hash_BYTES, u->pk_signature) == CRYPTO_INVALID_SIGNATURE) {
+        return CORE_ACCOUNT_INVALID;
+    }
 
     return OK;
 }

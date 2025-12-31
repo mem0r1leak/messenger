@@ -24,3 +24,4 @@ typedef struct {
 
 result_t account_create(User *u, const char *name, const char *username_prefix);
 result_t account_import(User *u, const uint8_t master_key[32]);
+result_t account_verify(User *u);
