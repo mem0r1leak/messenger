@@ -14,5 +14,6 @@ typedef enum {
 
     // Crypto
     CRYPTO_ERR,
+    CRYPTO_INVALID_SIGNATURE,
     CRYPTO_AUTH_FAILED,
 } result_t;

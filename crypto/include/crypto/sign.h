@@ -12,3 +12,8 @@ result_t cryptosign(
     uint8_t signature[signature_BYTES], const uint8_t *message, unsigned long long message_len,
     const uint8_t sk[identity_sign_SECRETKEYBYTES]
 );
+
+result_t crypto_sign_verify(
+    const uint8_t signature[signature_BYTES], const uint8_t *message,
+    unsigned long long message_len, const uint8_t pk[identity_sign_PUBLICKEYBYTES]
+);
