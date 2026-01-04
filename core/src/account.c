@@ -33,7 +33,7 @@ result_t account_create(User *u, const char *name, const char *username_prefix) 
     temp2[prefix_len] = '#'; // The '#' symbol
     memcpy(temp2 + prefix_len + 1, u->user_id, 8); // Copying first 8 bytes of user_id
 
-    uint8_t checksum[crypto_hash_sha256_BYTES];
+    uint8_t checksum[hash_BYTES];
     cryptohash(checksum, temp2, prefix_len + 1 + 8);
     memcpy(temp2 + prefix_len + 1 + 8, checksum, 2); // Adding first 2 bytes of hash of username
 
@@ -100,7 +100,7 @@ result_t account_import(User *u, const uint8_t master_key[32]) {
     temp2[prefix_len] = '#'; // The '#' symbol
     memcpy(temp2 + prefix_len + 1, u->user_id, 8); // Copying first 8 bytes of user_id
 
-    uint8_t checksum[crypto_hash_sha256_BYTES];
+    uint8_t checksum[hash_BYTES];
     cryptohash(checksum, temp2, prefix_len + 1 + 8);
     memcpy(temp2 + prefix_len + 1 + 8, checksum, 2); // Adding first 2 bytes of hash of username
 
