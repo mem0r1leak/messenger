@@ -140,6 +140,102 @@ result_t account_import(User *u, const uint8_t master_key[32]) {
     return OK;
 }
 
+result_t account_username_verify_integrity(const char *username) {
+    if (username == NULL) {
+        return CORE_ACCOUNT_USERNAME_CORRUPTED;
+    }
+    size_t username_len = strlen(username);
+    if (username_len == 0 || username_len > USERNAME_MAX_LEN) {
+        return CORE_ACCOUNT_USERNAME_INVALID_SIZE;
+    }
+
+    const char *hash_pos = strchr(username, '#');
+    if (hash_pos == NULL) {
+        return CORE_ACCOUNT_USERNAME_CORRUPTED;
+    }
+
+    size_t prefix_len = (size_t)(hash_pos - username);
+    if (prefix_len < PREFIX_MIN_LEN || prefix_len > PREFIX_MAX_LEN) {
+        return CORE_ACCOUNT_USERNAME_INVALID_SIZE;
+    }
+
+    const char *tag_str = hash_pos + 1;
+    if (*tag_str == '\0') {
+        return CORE_ACCOUNT_USERNAME_CORRUPTED;
+    }
+
+    size_t tag_str_len = username_len - (size_t)(tag_str - username);
+
+    // Define permitted symbols
+    const char permitted_symbols[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_.-";
+
+    // Check symbols
+    for (size_t i = 0; i < prefix_len; i++) {
+        if (strchr(permitted_symbols, username[i]) == NULL) {
+            return CORE_ACCOUNT_USERNAME_UNSUPPORTED_SYMBOL;
+        }
+    }
+
+    // Decode base58 security tag
+    uint8_t security_tag[SECURITY_TAG_BIN_LEN];
+    size_t binsz = sizeof(security_tag);
+
+    if (!b58tobin(security_tag, &binsz, tag_str, tag_str_len)) {
+        return CORE_ACCOUNT_USERNAME_CORRUPTED;
+    }
+
+    if (binsz != SECURITY_TAG_BIN_LEN) {
+        return CORE_ACCOUNT_USERNAME_CORRUPTED;
+    }
+
+    // Build data for hashing: prefix + '#' + first 8 bytes of tag
+    uint8_t hash_input[PREFIX_MAX_LEN + 1 + SECURITY_TAG_DATA_LEN];
+    size_t hash_input_len = prefix_len + 1 + SECURITY_TAG_DATA_LEN;
+
+    memcpy(hash_input, username, prefix_len + 1); // include '#'
+    memcpy(hash_input + prefix_len + 1, security_tag, 8);
+
+    uint8_t hash[hash_BYTES];
+    cryptohash(hash, hash_input, hash_input_len);
+
+    uint8_t checksum[SECURITY_TAG_CHECK_LEN];
+    checksum[0] = hash[0];
+    checksum[1] = hash[1];
+
+    // Verify checksum: last 2 bytes of security tag
+    if (security_tag[8] != checksum[0]||
+        security_tag[9] != checksum[1]) {
+        return CORE_ACCOUNT_USERNAME_INVALID_CHECKSUM;
+    }
+
+    return OK;
+}
+
+result_t account_username_verify_authenticity(const char *username, const uint8_t user_id[account_USERIDBYTES]) {
+    if (account_username_verify_integrity(username) != OK) {
+        return CORE_ACCOUNT_USERNAME_FORGED;
+    }
+
+    size_t username_len = strlen(username);
+    const char *hash_pos = strchr(username, '#');
+    const char *tag_str = hash_pos + 1;
+    size_t tag_str_len = username_len - (size_t)(tag_str - username);
+
+    // Decode base58 security tag
+    uint8_t security_tag[SECURITY_TAG_BIN_LEN];
+    size_t binsz = sizeof(security_tag);
+
+    b58tobin(security_tag, &binsz, tag_str, tag_str_len);
+
+    for (int i = 0; i < 8; i++) {
+        if (security_tag[i] != user_id[i]) {
+            return CORE_ACCOUNT_USERNAME_FORGED;
+        }
+    }
+
+    return OK;
+}
+
 result_t account_verify(User *u) {
     uint8_t buffer[512] = {0};
     uint8_t hash[signature_BYTES];
