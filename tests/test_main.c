@@ -12,7 +12,9 @@ int main(void) {
         cmocka_unit_test(test_account_create),
         cmocka_unit_test(test_account_import),
         cmocka_unit_test(test_sign),
-        cmocka_unit_test(test_account_verify)
+        cmocka_unit_test(test_account_verify),
+        cmocka_unit_test(test_account_username_verify_integrity),
+        cmocka_unit_test(test_account_username_verify_authenticity)
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);

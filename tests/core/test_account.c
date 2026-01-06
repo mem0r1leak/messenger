@@ -95,3 +95,31 @@ static void test_account_verify() {
     assert_int_equal(res1, OK);
     assert_int_equal(res2, CORE_ACCOUNT_INVALID);
 }
+
+static void test_account_username_verify_integrity() {
+    const char *username_valid = "danyloxx#5n5WbNAMXjrcYS";
+    const char *username_corrupted = "daanyloxx#5n5WbNAMXjrcYS";
+
+    result_t valid = account_username_verify_integrity(username_valid);
+    result_t corrupted = account_username_verify_integrity(username_corrupted);
+
+    assert_int_equal(valid, OK);
+    assert_int_not_equal(corrupted, OK);
+}
+
+static void test_account_username_verify_authenticity() {
+    User u = {0};
+
+    const char *name = "Danylo";
+    const char *prefix = "danyloxx";
+
+    account_create(&u, name, prefix);
+
+    result_t ok = account_username_verify_authenticity(u.username, u.user_id);
+    u.user_id[19] = 0xdf;
+    u.user_id[3] = 0xa1;
+    result_t fail = account_username_verify_authenticity(u.username, u.user_id);
+
+    assert_int_equal(ok, OK);
+    assert_int_equal(fail, CORE_ACCOUNT_USERNAME_FORGED);
+}
