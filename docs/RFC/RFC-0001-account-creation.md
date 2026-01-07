@@ -44,7 +44,7 @@ Account creation is a core operation of the messenger and defines:
 - Public key for encryption
 - Signature
 ## Account Creation Flow
-<img src="https://github.com/Wemis/messenger/blob/master/docs/images/RFC-001-account-creation-scheme.png">
+![Account Creation Flow](assets/RFC-0001/account-creation-scheme.png)
 
 ## Module Responsibilities
 ### core/
