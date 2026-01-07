@@ -1,8 +1,12 @@
 # RFC 0002: Username Derivation Scheme
 Status: `Implemented`
+
 Author: Danylo Derkach
+
 Created: 2026-01-06
+
 Last Update: 2026-01-06
+
 ## 1. Summary
 Proposes a deterministic username derivation scheme.
 The scheme allows users to independently verify the authenticity and integrity
