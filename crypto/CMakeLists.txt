@@ -7,6 +7,8 @@ add_library(messenger_crypto
 target_include_directories(messenger_crypto
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 find_package(PkgConfig REQUIRED)

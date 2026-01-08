@@ -5,6 +5,8 @@ add_library(messenger_core
 target_include_directories(messenger_core
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
+    PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
 target_link_libraries(messenger_core
