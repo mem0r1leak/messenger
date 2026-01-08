@@ -57,7 +57,7 @@ result_t account_create(User *u, const char *name, const char *username_prefix) 
     memcpy(security_tag, temp2 + prefix_len + 1, SECURITY_TAG_BIN_LEN);
 
     char security_tag_b58[16];
-    size_t b58len = 0;
+    size_t b58len = 16;
     if (b58enc(security_tag_b58, &b58len, security_tag, SECURITY_TAG_BIN_LEN) == false) { // Encoding security tag in base58
         memset(u, 0, sizeof(User));
         return ENCODING_BASE58_ERR;
@@ -147,7 +147,7 @@ result_t account_import(User *u, const uint8_t master_key[32]) {
     memcpy(security_tag, temp2 + prefix_len + 1, SECURITY_TAG_BIN_LEN);
 
     char security_tag_b58[16];
-    size_t b58len = 0;
+    size_t b58len = 16;
     if (b58enc(security_tag_b58, &b58len, security_tag, SECURITY_TAG_BIN_LEN) == false) { // Encoding security tag in base58
         memset(u, 0, sizeof(User));
         return ENCODING_BASE58_ERR;
