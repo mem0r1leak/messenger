@@ -23,3 +23,7 @@ add_messenger_test(
     test_identity_verify
     core/test_identity_verify.c
 )
+add_messenger_test(
+    test_sign
+    crypto/test_sign.c
+)
