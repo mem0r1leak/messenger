@@ -19,3 +19,7 @@ add_messenger_test(
     test_account_import
     core/test_account_import.c
 )
+add_messenger_test(
+    test_identity_verify
+    core/test_identity_verify.c
+)
