@@ -27,3 +27,7 @@ add_messenger_test(
     test_sign
     crypto/test_sign.c
 )
+add_messenger_test(
+    test_hash
+    crypto/test_hash.c
+)
