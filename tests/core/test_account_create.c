@@ -50,9 +50,21 @@ static void test_account_create_valid() {
     assert_int_equal(r, OK);
 }
 
+static void test_account_create_name_too_long() {
+    User u = {0};
+
+    const char *name = "Jhfuowefhoiewhfuciewolxmuiwhfizuewwizhmuiwmxxowiejfzxmxfhiwoxmfwixhfuwi";
+    const char *prefix = "bob";
+
+    result_t r = account_create(&u, name, prefix);
+
+    assert_int_equal(r, CORE_ACCOUNT_NAME_TOO_LONG);
+}
+
 int main(void) {
     const struct CMUnitTest tests[] = {
         cmocka_unit_test(test_account_create_valid),
+        cmocka_unit_test(test_account_create_name_too_long)
     };
 
     return cmocka_run_group_tests(tests, NULL, NULL);
