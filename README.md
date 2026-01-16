@@ -66,7 +66,7 @@ All project documentation is located in the `docs/` directory.
 ### Key Documents
 - [docs/philosophy.md](docs/philosophy.md) - project principles and trust model
 - [docs/architecture.md](docs/architecture.md) - system architecture
-- [docs/rfc](docs/rfc) - RFCs documents
+- [docs/rfc](docs/RFC) - RFCs documents
 ### Development Guidelines
 - [docs/development/workflow.md](docs/development/workflow.md)
 - [docs/development/commits.md](docs/development/commits.md)
