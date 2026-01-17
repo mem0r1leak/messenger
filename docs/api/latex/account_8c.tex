@@ -1,0 +1,55 @@
+\doxysection{core/\+src/\+account.c File Reference}
+\hypertarget{account_8c}{}\label{account_8c}\index{core/src/account.c@{core/src/account.c}}
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include "{}core/\+account.\+h"{}}\newline
+{\ttfamily \+\#include "{}crypto/\+hash.\+h"{}}\newline
+{\ttfamily \+\#include "{}crypto/\+sign.\+h"{}}\newline
+{\ttfamily \+\#include "{}shared/\+base58.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{account_8c_a20716d1bb073c43c9ee4395a1fe77158}{account\+\_\+create}} (\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}u, const char \texorpdfstring{$\ast$}{*}name, const char \texorpdfstring{$\ast$}{*}username\+\_\+prefix)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{account_8c_ad843559cecb3bfb5ce588d4087551f49}{account\+\_\+import}} (\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}u, const uint8\+\_\+t master\+\_\+key\+[32]\+)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{account_8c_a79f6948718da99d3ea1ce13150bc1c79}{account\+\_\+username\+\_\+verify\+\_\+integrity}} (const char \texorpdfstring{$\ast$}{*}username)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{account_8c_a6362d14f0077848de5b316d5dda4776f}{account\+\_\+username\+\_\+verify\+\_\+authenticity}} (const char \texorpdfstring{$\ast$}{*}username, const uint8\+\_\+t user\+\_\+id\+[\doxymbox{\hyperlink{account_8h_a8a056ee36cfa96018c1ee363e80d55e5}{account\+\_\+\+USERIDBYTES}}]\+)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{account_8c_a8fb41eef456547b8617defcdce6d298e}{account\+\_\+verify}} (\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}u)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{account_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{account_8c_a20716d1bb073c43c9ee4395a1fe77158}\index{account.c@{account.c}!account\_create@{account\_create}}
+\index{account\_create@{account\_create}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{account\_create()}{account\_create()}}
+{\footnotesize\ttfamily \label{account_8c_a20716d1bb073c43c9ee4395a1fe77158} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} account\+\_\+create (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}}]{u}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{username\+\_\+prefix}{}\end{DoxyParamCaption})}
+
+\Hypertarget{account_8c_ad843559cecb3bfb5ce588d4087551f49}\index{account.c@{account.c}!account\_import@{account\_import}}
+\index{account\_import@{account\_import}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{account\_import()}{account\_import()}}
+{\footnotesize\ttfamily \label{account_8c_ad843559cecb3bfb5ce588d4087551f49} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} account\+\_\+import (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}}]{u}{, }\item[{const uint8\+\_\+t}]{master\+\_\+key}{\+[32]\+}\end{DoxyParamCaption})}
+
+\Hypertarget{account_8c_a6362d14f0077848de5b316d5dda4776f}\index{account.c@{account.c}!account\_username\_verify\_authenticity@{account\_username\_verify\_authenticity}}
+\index{account\_username\_verify\_authenticity@{account\_username\_verify\_authenticity}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{account\_username\_verify\_authenticity()}{account\_username\_verify\_authenticity()}}
+{\footnotesize\ttfamily \label{account_8c_a6362d14f0077848de5b316d5dda4776f} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} account\+\_\+username\+\_\+verify\+\_\+authenticity (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{username}{, }\item[{const uint8\+\_\+t}]{user\+\_\+id}{\+[account\+\_\+\+USERIDBYTES]\+}\end{DoxyParamCaption})}
+
+\Hypertarget{account_8c_a79f6948718da99d3ea1ce13150bc1c79}\index{account.c@{account.c}!account\_username\_verify\_integrity@{account\_username\_verify\_integrity}}
+\index{account\_username\_verify\_integrity@{account\_username\_verify\_integrity}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{account\_username\_verify\_integrity()}{account\_username\_verify\_integrity()}}
+{\footnotesize\ttfamily \label{account_8c_a79f6948718da99d3ea1ce13150bc1c79} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} account\+\_\+username\+\_\+verify\+\_\+integrity (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{username}{}\end{DoxyParamCaption})}
+
+\Hypertarget{account_8c_a8fb41eef456547b8617defcdce6d298e}\index{account.c@{account.c}!account\_verify@{account\_verify}}
+\index{account\_verify@{account\_verify}!account.c@{account.c}}
+\doxysubsubsection{\texorpdfstring{account\_verify()}{account\_verify()}}
+{\footnotesize\ttfamily \label{account_8c_a8fb41eef456547b8617defcdce6d298e} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} account\+\_\+verify (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}}]{u}{}\end{DoxyParamCaption})}
+

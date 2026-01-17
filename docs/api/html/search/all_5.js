@@ -1,0 +1,12 @@
+var searchData=
+[
+  ['identity_2ec_0',['identity.c',['../identity_8c.html',1,'']]],
+  ['identity_2eh_1',['identity.h',['../identity_8h.html',1,'']]],
+  ['identity_5fencr_5fpublickeybytes_2',['identity_encr_PUBLICKEYBYTES',['../identity_8h.html#aaf87e49eeff5d72ffa55789c49a8161e',1,'identity.h']]],
+  ['identity_5fencr_5fsecretkeybytes_3',['identity_encr_SECRETKEYBYTES',['../identity_8h.html#a93b1cc05866e4efad4448ec86ac832c4',1,'identity.h']]],
+  ['identity_5ffrom_5fmaster_5fkey_4',['identity_from_master_key',['../identity_8h.html#ab9511f3fcaf437899bab4cd3e994cf56',1,'identity_from_master_key(const uint8_t master_key[identity_MASTERKEYBYTES], uint8_t sk_signature[identity_sign_SECRETKEYBYTES], uint8_t pk_signature[identity_sign_PUBLICKEYBYTES], uint8_t sk_encryption[identity_encr_SECRETKEYBYTES], uint8_t pk_encryption[identity_encr_PUBLICKEYBYTES]):&#160;identity.c'],['../identity_8c.html#ab9511f3fcaf437899bab4cd3e994cf56',1,'identity_from_master_key(const uint8_t master_key[identity_MASTERKEYBYTES], uint8_t sk_signature[identity_sign_SECRETKEYBYTES], uint8_t pk_signature[identity_sign_PUBLICKEYBYTES], uint8_t sk_encryption[identity_encr_SECRETKEYBYTES], uint8_t pk_encryption[identity_encr_PUBLICKEYBYTES]):&#160;identity.c']]],
+  ['identity_5fgenerate_5',['identity_generate',['../identity_8h.html#a4d2426b4684999cc48be602ef396bfb7',1,'identity_generate(uint8_t master_key[identity_MASTERKEYBYTES], uint8_t sk_signature[identity_sign_SECRETKEYBYTES], uint8_t pk_signature[identity_sign_PUBLICKEYBYTES], uint8_t sk_encryption[identity_encr_SECRETKEYBYTES], uint8_t pk_encryption[identity_encr_PUBLICKEYBYTES]):&#160;identity.c'],['../identity_8c.html#a4d2426b4684999cc48be602ef396bfb7',1,'identity_generate(uint8_t master_key[identity_MASTERKEYBYTES], uint8_t sk_signature[identity_sign_SECRETKEYBYTES], uint8_t pk_signature[identity_sign_PUBLICKEYBYTES], uint8_t sk_encryption[identity_encr_SECRETKEYBYTES], uint8_t pk_encryption[identity_encr_PUBLICKEYBYTES]):&#160;identity.c']]],
+  ['identity_5fmasterkeybytes_6',['identity_MASTERKEYBYTES',['../identity_8h.html#aaaa5d782a209df9d4b96dd536baeab68',1,'identity.h']]],
+  ['identity_5fsign_5fpublickeybytes_7',['identity_sign_PUBLICKEYBYTES',['../identity_8h.html#a94cb0eeb35acb9984910776fd9be2155',1,'identity.h']]],
+  ['identity_5fsign_5fsecretkeybytes_8',['identity_sign_SECRETKEYBYTES',['../identity_8h.html#ac0aca7d28010844e7a11f99d6aa99854',1,'identity.h']]]
+];

@@ -1,0 +1,119 @@
+\chapter{Contributing Guidelines }
+\hypertarget{md_CONTRIBUTING}{}\label{md_CONTRIBUTING}\index{Contributing Guidelines@{Contributing Guidelines}}
+\label{md_CONTRIBUTING_autotoc_md0}%
+\Hypertarget{md_CONTRIBUTING_autotoc_md0}%
+
+
+Thank you for your interest in contributing to this project.
+
+This repository follows strict architectural, cryptographic, and engineering principles. Contributions are expected to respect the project’s philosophy and documented design decisions. \hypertarget{md_CONTRIBUTING_autotoc_md1}{}\doxysection{\texorpdfstring{Before You Start}{Before You Start}}\label{md_CONTRIBUTING_autotoc_md1}
+Before submitting any contribution, please read the following documents:\+
+\begin{DoxyItemize}
+\item docs/\+philosophy.md
+\item docs/\+architecture.md
+\end{DoxyItemize}
+
+For non-\/trivial changes, also review:\+
+\begin{DoxyItemize}
+\item \href{docs/rfc/}{\texttt{docs/\+rfc/\+}}
+\end{DoxyItemize}
+
+Contributions that violate these documents will not be accepted. \hypertarget{md_CONTRIBUTING_autotoc_md2}{}\doxysection{\texorpdfstring{Contribution Types}{Contribution Types}}\label{md_CONTRIBUTING_autotoc_md2}
+The following types of contributions are welcome:\+
+\begin{DoxyItemize}
+\item bug fixes
+\item documentation improvements
+\item test additions
+\item performance improvements
+\item implementation of accepted RFCs
+\end{DoxyItemize}
+
+The following are {\bfseries{not accepted without prior discussion}}:\+
+\begin{DoxyItemize}
+\item new cryptographic primitives
+\item changes to the trust model
+\item architectural refactoring
+\item protocol design changes
+\end{DoxyItemize}\hypertarget{md_CONTRIBUTING_autotoc_md3}{}\doxysection{\texorpdfstring{RFC Process}{RFC Process}}\label{md_CONTRIBUTING_autotoc_md3}
+Any change that affects:\+
+\begin{DoxyItemize}
+\item cryptography
+\item identity model
+\item protocol behavior
+\item module boundaries
+\end{DoxyItemize}
+
+{\bfseries{MUST}} be proposed as an RFC in {\ttfamily docs/\+rfc/\+}.
+
+RFCs should describe:\+
+\begin{DoxyItemize}
+\item the problem
+\item the proposed solution
+\item alternatives considered
+\item security implications
+\end{DoxyItemize}
+
+Please review RFC template:\+
+\begin{DoxyItemize}
+\item \href{docs/RFC/RFC-Template}{\texttt{docs/\+\+RFC/\+\+RFC-\/\+Template}}
+\end{DoxyItemize}
+
+Implementation should only begin after the RFC is accepted. \hypertarget{md_CONTRIBUTING_autotoc_md4}{}\doxysection{\texorpdfstring{Development Workflow}{Development Workflow}}\label{md_CONTRIBUTING_autotoc_md4}
+All changes must follow the documented workflow:\+
+\begin{DoxyItemize}
+\item docs/\+development/\+workflow.md
+\item docs/\+development/\+commits.md 
+\end{DoxyItemize}\hypertarget{md_CONTRIBUTING_autotoc_md5}{}\doxysubsection{\texorpdfstring{Summary}{Summary}}\label{md_CONTRIBUTING_autotoc_md5}
+
+\begin{DoxyEnumerate}
+\item Fork the repository
+\item Create a feature branch
+\item Implement the change
+\item Add or update tests
+\item Update documentation if required
+\item Submit a pull request 
+\end{DoxyEnumerate}\hypertarget{md_CONTRIBUTING_autotoc_md6}{}\doxysection{\texorpdfstring{Commit Policy}{Commit Policy}}\label{md_CONTRIBUTING_autotoc_md6}
+Commits must:\+
+\begin{DoxyItemize}
+\item be logically scoped
+\item build successfully
+\item include meaningful commit messages
+\end{DoxyItemize}
+
+Refer to:\+
+\begin{DoxyItemize}
+\item docs/\+development/\+commits.md 
+\end{DoxyItemize}\hypertarget{md_CONTRIBUTING_autotoc_md7}{}\doxysection{\texorpdfstring{Coding Standards}{Coding Standards}}\label{md_CONTRIBUTING_autotoc_md7}
+All code must follow the project coding rules:\+
+\begin{DoxyItemize}
+\item docs/\+coding/\+style.md
+\item docs/\+coding/\+naming.md
+\item docs/\+coding/\+error-\/handling.md
+\end{DoxyItemize}
+
+Submissions that violate these rules will be rejected. \hypertarget{md_CONTRIBUTING_autotoc_md8}{}\doxysection{\texorpdfstring{Testing Requirements}{Testing Requirements}}\label{md_CONTRIBUTING_autotoc_md8}
+All non-\/trivial changes must include tests.
+\begin{DoxyItemize}
+\item Tests should mirror the project module structure
+\item New functionality must be covered by unit tests
+\item Bug fixes must include regression tests
+\end{DoxyItemize}
+
+See:\+
+\begin{DoxyItemize}
+\item docs/\+development/\+testing.md 
+\end{DoxyItemize}\hypertarget{md_CONTRIBUTING_autotoc_md9}{}\doxysection{\texorpdfstring{Review Process}{Review Process}}\label{md_CONTRIBUTING_autotoc_md9}
+Pull requests are reviewed with focus on:\+
+\begin{DoxyItemize}
+\item architectural correctness
+\item security implications
+\item clarity and maintainability
+\item consistency with project philosophy
+\end{DoxyItemize}
+
+PRs may be rejected if they:\+
+\begin{DoxyItemize}
+\item introduce unnecessary complexity
+\item violate documented boundaries
+\item prioritize convenience over security 
+\end{DoxyItemize}

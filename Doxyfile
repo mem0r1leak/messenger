@@ -1,0 +1,19 @@
+# Основні
+PROJECT_NAME           = "Messenger"
+OUTPUT_DIRECTORY       = docs/api
+GENERATE_HTML          = YES
+
+# Вхідні файли
+INPUT                  = .
+FILE_PATTERNS          = *.c *.h
+RECURSIVE              = YES
+
+# Щоб брати всі функції, навіть без /// коментарів
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+EXTRACT_LOCAL_CLASSES  = YES
+
+# Підтримка Markdown у /// або /** */ коментарях
+MARKDOWN_SUPPORT       = YES
+AUTOLINK_SUPPORT       = YES

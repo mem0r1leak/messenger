@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['crypto_5fsign_5fverify_0',['crypto_sign_verify',['../sign_8h.html#a143a755beeffcaf49ed5ced713408a67',1,'crypto_sign_verify(const uint8_t signature[signature_BYTES], const uint8_t *message, unsigned long long message_len, const uint8_t pk[identity_sign_PUBLICKEYBYTES]):&#160;sign.c'],['../sign_8c.html#a143a755beeffcaf49ed5ced713408a67',1,'crypto_sign_verify(const uint8_t signature[signature_BYTES], const uint8_t *message, unsigned long long message_len, const uint8_t pk[identity_sign_PUBLICKEYBYTES]):&#160;sign.c']]],
+  ['cryptohash_1',['cryptohash',['../hash_8h.html#a2709f75741a4ea777589169fda79ad81',1,'cryptohash(uint8_t *out, const uint8_t *in, const size_t in_len):&#160;hash.c'],['../hash_8c.html#a2709f75741a4ea777589169fda79ad81',1,'cryptohash(uint8_t *out, const uint8_t *in, const size_t in_len):&#160;hash.c']]],
+  ['cryptosign_2',['cryptosign',['../sign_8h.html#ac269aef21c7c1b0931a65612ec8c594d',1,'cryptosign(uint8_t signature[signature_BYTES], const uint8_t *message, unsigned long long message_len, const uint8_t sk[identity_sign_SECRETKEYBYTES]):&#160;sign.c'],['../sign_8c.html#ac269aef21c7c1b0931a65612ec8c594d',1,'cryptosign(uint8_t signature[signature_BYTES], const uint8_t *message, unsigned long long message_len, const uint8_t sk[identity_sign_SECRETKEYBYTES]):&#160;sign.c']]]
+];

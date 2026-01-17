@@ -1,0 +1,147 @@
+\doxysection{core/\+include/\+core/\+account.h File Reference}
+\hypertarget{account_8h}{}\label{account_8h}\index{core/include/core/account.h@{core/include/core/account.h}}
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include "{}shared/\+result.\+h"{}}\newline
+{\ttfamily \+\#include "{}crypto/\+identity.\+h"{}}\newline
+{\ttfamily \+\#include "{}crypto/\+sign.\+h"{}}\newline
+\doxysubsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \doxymbox{\hyperlink{structUser}{User}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{account_8h_a642570093b99325ce39cc6d505592c2c}{PREFIX\+\_\+\+MIN\+\_\+\+LEN}}~1
+\item 
+\+\#define \doxymbox{\hyperlink{account_8h_ae66437aadace82a1b7a0ac9ce7197587}{PREFIX\+\_\+\+MAX\+\_\+\+LEN}}~16
+\item 
+\+\#define \doxymbox{\hyperlink{account_8h_a41b70e5bef96800d643c5b969910811a}{USERNAME\+\_\+\+MAX\+\_\+\+LEN}}~31
+\item 
+\+\#define \doxymbox{\hyperlink{account_8h_a8120b2692bd360a2ab78557b64744215}{SECURITY\+\_\+\+TAG\+\_\+\+BIN\+\_\+\+LEN}}~10
+\item 
+\+\#define \doxymbox{\hyperlink{account_8h_a43d0e1e86e56e0a5d6b29f6e71313f3e}{SECURITY\+\_\+\+TAG\+\_\+\+STR\+\_\+\+MAX\+\_\+\+LEN}}~14
+\item 
+\+\#define \doxymbox{\hyperlink{account_8h_a5e7048ee4eba43f4c4c6764be15d5dc9}{SECURITY\+\_\+\+TAG\+\_\+\+DATA\+\_\+\+LEN}}~8
+\item 
+\+\#define \doxymbox{\hyperlink{account_8h_ad4d0d81a09e272b205d69f362b544e37}{SECURITY\+\_\+\+TAG\+\_\+\+CHECK\+\_\+\+LEN}}~2
+\item 
+\+\#define \doxymbox{\hyperlink{account_8h_a67d34742b6401e624b1d3e168d341b86}{account\+\_\+\+NAMEBYTES}}~64
+\item 
+\+\#define \doxymbox{\hyperlink{account_8h_a8a056ee36cfa96018c1ee363e80d55e5}{account\+\_\+\+USERIDBYTES}}~32
+\item 
+\+\#define \doxymbox{\hyperlink{account_8h_a1587862b51b7277c2bca9b39129949ed}{account\+\_\+\+USERNAMEBYTES}}~\doxymbox{\hyperlink{account_8h_ae66437aadace82a1b7a0ac9ce7197587}{PREFIX\+\_\+\+MAX\+\_\+\+LEN}} + 1 + \doxymbox{\hyperlink{account_8h_a43d0e1e86e56e0a5d6b29f6e71313f3e}{SECURITY\+\_\+\+TAG\+\_\+\+STR\+\_\+\+MAX\+\_\+\+LEN}} + 1
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{account_8h_a20716d1bb073c43c9ee4395a1fe77158}{account\+\_\+create}} (\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}u, const char \texorpdfstring{$\ast$}{*}name, const char \texorpdfstring{$\ast$}{*}username\+\_\+prefix)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{account_8h_ad843559cecb3bfb5ce588d4087551f49}{account\+\_\+import}} (\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}u, const uint8\+\_\+t master\+\_\+key\+[32]\+)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{account_8h_a79f6948718da99d3ea1ce13150bc1c79}{account\+\_\+username\+\_\+verify\+\_\+integrity}} (const char \texorpdfstring{$\ast$}{*}username)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{account_8h_a6362d14f0077848de5b316d5dda4776f}{account\+\_\+username\+\_\+verify\+\_\+authenticity}} (const char \texorpdfstring{$\ast$}{*}username, const uint8\+\_\+t user\+\_\+id\+[\doxymbox{\hyperlink{account_8h_a8a056ee36cfa96018c1ee363e80d55e5}{account\+\_\+\+USERIDBYTES}}]\+)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{account_8h_a8fb41eef456547b8617defcdce6d298e}{account\+\_\+verify}} (\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}u)
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{account_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{account_8h_a67d34742b6401e624b1d3e168d341b86}\index{account.h@{account.h}!account\_NAMEBYTES@{account\_NAMEBYTES}}
+\index{account\_NAMEBYTES@{account\_NAMEBYTES}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{account\_NAMEBYTES}{account\_NAMEBYTES}}
+{\footnotesize\ttfamily \label{account_8h_a67d34742b6401e624b1d3e168d341b86} 
+\+\#define account\+\_\+\+NAMEBYTES~64}
+
+\Hypertarget{account_8h_a8a056ee36cfa96018c1ee363e80d55e5}\index{account.h@{account.h}!account\_USERIDBYTES@{account\_USERIDBYTES}}
+\index{account\_USERIDBYTES@{account\_USERIDBYTES}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{account\_USERIDBYTES}{account\_USERIDBYTES}}
+{\footnotesize\ttfamily \label{account_8h_a8a056ee36cfa96018c1ee363e80d55e5} 
+\+\#define account\+\_\+\+USERIDBYTES~32}
+
+\Hypertarget{account_8h_a1587862b51b7277c2bca9b39129949ed}\index{account.h@{account.h}!account\_USERNAMEBYTES@{account\_USERNAMEBYTES}}
+\index{account\_USERNAMEBYTES@{account\_USERNAMEBYTES}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{account\_USERNAMEBYTES}{account\_USERNAMEBYTES}}
+{\footnotesize\ttfamily \label{account_8h_a1587862b51b7277c2bca9b39129949ed} 
+\+\#define account\+\_\+\+USERNAMEBYTES~\doxymbox{\hyperlink{account_8h_ae66437aadace82a1b7a0ac9ce7197587}{PREFIX\+\_\+\+MAX\+\_\+\+LEN}} + 1 + \doxymbox{\hyperlink{account_8h_a43d0e1e86e56e0a5d6b29f6e71313f3e}{SECURITY\+\_\+\+TAG\+\_\+\+STR\+\_\+\+MAX\+\_\+\+LEN}} + 1}
+
+\Hypertarget{account_8h_ae66437aadace82a1b7a0ac9ce7197587}\index{account.h@{account.h}!PREFIX\_MAX\_LEN@{PREFIX\_MAX\_LEN}}
+\index{PREFIX\_MAX\_LEN@{PREFIX\_MAX\_LEN}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{PREFIX\_MAX\_LEN}{PREFIX\_MAX\_LEN}}
+{\footnotesize\ttfamily \label{account_8h_ae66437aadace82a1b7a0ac9ce7197587} 
+\+\#define PREFIX\+\_\+\+MAX\+\_\+\+LEN~16}
+
+\Hypertarget{account_8h_a642570093b99325ce39cc6d505592c2c}\index{account.h@{account.h}!PREFIX\_MIN\_LEN@{PREFIX\_MIN\_LEN}}
+\index{PREFIX\_MIN\_LEN@{PREFIX\_MIN\_LEN}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{PREFIX\_MIN\_LEN}{PREFIX\_MIN\_LEN}}
+{\footnotesize\ttfamily \label{account_8h_a642570093b99325ce39cc6d505592c2c} 
+\+\#define PREFIX\+\_\+\+MIN\+\_\+\+LEN~1}
+
+\Hypertarget{account_8h_a8120b2692bd360a2ab78557b64744215}\index{account.h@{account.h}!SECURITY\_TAG\_BIN\_LEN@{SECURITY\_TAG\_BIN\_LEN}}
+\index{SECURITY\_TAG\_BIN\_LEN@{SECURITY\_TAG\_BIN\_LEN}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{SECURITY\_TAG\_BIN\_LEN}{SECURITY\_TAG\_BIN\_LEN}}
+{\footnotesize\ttfamily \label{account_8h_a8120b2692bd360a2ab78557b64744215} 
+\+\#define SECURITY\+\_\+\+TAG\+\_\+\+BIN\+\_\+\+LEN~10}
+
+\Hypertarget{account_8h_ad4d0d81a09e272b205d69f362b544e37}\index{account.h@{account.h}!SECURITY\_TAG\_CHECK\_LEN@{SECURITY\_TAG\_CHECK\_LEN}}
+\index{SECURITY\_TAG\_CHECK\_LEN@{SECURITY\_TAG\_CHECK\_LEN}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{SECURITY\_TAG\_CHECK\_LEN}{SECURITY\_TAG\_CHECK\_LEN}}
+{\footnotesize\ttfamily \label{account_8h_ad4d0d81a09e272b205d69f362b544e37} 
+\+\#define SECURITY\+\_\+\+TAG\+\_\+\+CHECK\+\_\+\+LEN~2}
+
+\Hypertarget{account_8h_a5e7048ee4eba43f4c4c6764be15d5dc9}\index{account.h@{account.h}!SECURITY\_TAG\_DATA\_LEN@{SECURITY\_TAG\_DATA\_LEN}}
+\index{SECURITY\_TAG\_DATA\_LEN@{SECURITY\_TAG\_DATA\_LEN}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{SECURITY\_TAG\_DATA\_LEN}{SECURITY\_TAG\_DATA\_LEN}}
+{\footnotesize\ttfamily \label{account_8h_a5e7048ee4eba43f4c4c6764be15d5dc9} 
+\+\#define SECURITY\+\_\+\+TAG\+\_\+\+DATA\+\_\+\+LEN~8}
+
+\Hypertarget{account_8h_a43d0e1e86e56e0a5d6b29f6e71313f3e}\index{account.h@{account.h}!SECURITY\_TAG\_STR\_MAX\_LEN@{SECURITY\_TAG\_STR\_MAX\_LEN}}
+\index{SECURITY\_TAG\_STR\_MAX\_LEN@{SECURITY\_TAG\_STR\_MAX\_LEN}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{SECURITY\_TAG\_STR\_MAX\_LEN}{SECURITY\_TAG\_STR\_MAX\_LEN}}
+{\footnotesize\ttfamily \label{account_8h_a43d0e1e86e56e0a5d6b29f6e71313f3e} 
+\+\#define SECURITY\+\_\+\+TAG\+\_\+\+STR\+\_\+\+MAX\+\_\+\+LEN~14}
+
+\Hypertarget{account_8h_a41b70e5bef96800d643c5b969910811a}\index{account.h@{account.h}!USERNAME\_MAX\_LEN@{USERNAME\_MAX\_LEN}}
+\index{USERNAME\_MAX\_LEN@{USERNAME\_MAX\_LEN}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{USERNAME\_MAX\_LEN}{USERNAME\_MAX\_LEN}}
+{\footnotesize\ttfamily \label{account_8h_a41b70e5bef96800d643c5b969910811a} 
+\+\#define USERNAME\+\_\+\+MAX\+\_\+\+LEN~31}
+
+
+
+\label{doc-func-members}
+\Hypertarget{account_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{account_8h_a20716d1bb073c43c9ee4395a1fe77158}\index{account.h@{account.h}!account\_create@{account\_create}}
+\index{account\_create@{account\_create}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{account\_create()}{account\_create()}}
+{\footnotesize\ttfamily \label{account_8h_a20716d1bb073c43c9ee4395a1fe77158} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} account\+\_\+create (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}}]{u}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{name}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{username\+\_\+prefix}{}\end{DoxyParamCaption})}
+
+\Hypertarget{account_8h_ad843559cecb3bfb5ce588d4087551f49}\index{account.h@{account.h}!account\_import@{account\_import}}
+\index{account\_import@{account\_import}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{account\_import()}{account\_import()}}
+{\footnotesize\ttfamily \label{account_8h_ad843559cecb3bfb5ce588d4087551f49} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} account\+\_\+import (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}}]{u}{, }\item[{const uint8\+\_\+t}]{master\+\_\+key}{\+[32]\+}\end{DoxyParamCaption})}
+
+\Hypertarget{account_8h_a6362d14f0077848de5b316d5dda4776f}\index{account.h@{account.h}!account\_username\_verify\_authenticity@{account\_username\_verify\_authenticity}}
+\index{account\_username\_verify\_authenticity@{account\_username\_verify\_authenticity}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{account\_username\_verify\_authenticity()}{account\_username\_verify\_authenticity()}}
+{\footnotesize\ttfamily \label{account_8h_a6362d14f0077848de5b316d5dda4776f} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} account\+\_\+username\+\_\+verify\+\_\+authenticity (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{username}{, }\item[{const uint8\+\_\+t}]{user\+\_\+id}{\+[account\+\_\+\+USERIDBYTES]\+}\end{DoxyParamCaption})}
+
+\Hypertarget{account_8h_a79f6948718da99d3ea1ce13150bc1c79}\index{account.h@{account.h}!account\_username\_verify\_integrity@{account\_username\_verify\_integrity}}
+\index{account\_username\_verify\_integrity@{account\_username\_verify\_integrity}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{account\_username\_verify\_integrity()}{account\_username\_verify\_integrity()}}
+{\footnotesize\ttfamily \label{account_8h_a79f6948718da99d3ea1ce13150bc1c79} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} account\+\_\+username\+\_\+verify\+\_\+integrity (\begin{DoxyParamCaption}\item[{const char \texorpdfstring{$\ast$}{*}}]{username}{}\end{DoxyParamCaption})}
+
+\Hypertarget{account_8h_a8fb41eef456547b8617defcdce6d298e}\index{account.h@{account.h}!account\_verify@{account\_verify}}
+\index{account\_verify@{account\_verify}!account.h@{account.h}}
+\doxysubsubsection{\texorpdfstring{account\_verify()}{account\_verify()}}
+{\footnotesize\ttfamily \label{account_8h_a8fb41eef456547b8617defcdce6d298e} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} account\+\_\+verify (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{structUser}{User}} \texorpdfstring{$\ast$}{*}}]{u}{}\end{DoxyParamCaption})}
+

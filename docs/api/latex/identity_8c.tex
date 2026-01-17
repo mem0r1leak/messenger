@@ -1,0 +1,33 @@
+\doxysection{crypto/\+src/\+identity.c File Reference}
+\hypertarget{identity_8c}{}\label{identity_8c}\index{crypto/src/identity.c@{crypto/src/identity.c}}
+{\ttfamily \+\#include $<$sodium/\+crypto\+\_\+box.\+h$>$}\newline
+{\ttfamily \+\#include $<$sodium/\+crypto\+\_\+hash\+\_\+sha256.\+h$>$}\newline
+{\ttfamily \+\#include $<$sodium/\+crypto\+\_\+sign.\+h$>$}\newline
+{\ttfamily \+\#include $<$sodium/\+randombytes.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include $<$stddef.\+h$>$}\newline
+{\ttfamily \+\#include "{}crypto/\+identity.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{identity_8c_a4d2426b4684999cc48be602ef396bfb7}{identity\+\_\+generate}} (uint8\+\_\+t master\+\_\+key\+[\doxymbox{\hyperlink{identity_8h_aaaa5d782a209df9d4b96dd536baeab68}{identity\+\_\+\+MASTERKEYBYTES}}]\+, uint8\+\_\+t sk\+\_\+signature\+[\doxymbox{\hyperlink{identity_8h_ac0aca7d28010844e7a11f99d6aa99854}{identity\+\_\+sign\+\_\+\+SECRETKEYBYTES}}]\+, uint8\+\_\+t pk\+\_\+signature\+[\doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES}}]\+, uint8\+\_\+t sk\+\_\+encryption\+[\doxymbox{\hyperlink{identity_8h_a93b1cc05866e4efad4448ec86ac832c4}{identity\+\_\+encr\+\_\+\+SECRETKEYBYTES}}]\+, uint8\+\_\+t pk\+\_\+encryption\+[\doxymbox{\hyperlink{identity_8h_aaf87e49eeff5d72ffa55789c49a8161e}{identity\+\_\+encr\+\_\+\+PUBLICKEYBYTES}}]\+)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{identity_8c_ab9511f3fcaf437899bab4cd3e994cf56}{identity\+\_\+from\+\_\+master\+\_\+key}} (const uint8\+\_\+t master\+\_\+key\+[\doxymbox{\hyperlink{identity_8h_aaaa5d782a209df9d4b96dd536baeab68}{identity\+\_\+\+MASTERKEYBYTES}}]\+, uint8\+\_\+t sk\+\_\+signature\+[\doxymbox{\hyperlink{identity_8h_ac0aca7d28010844e7a11f99d6aa99854}{identity\+\_\+sign\+\_\+\+SECRETKEYBYTES}}]\+, uint8\+\_\+t pk\+\_\+signature\+[\doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES}}]\+, uint8\+\_\+t sk\+\_\+encryption\+[\doxymbox{\hyperlink{identity_8h_a93b1cc05866e4efad4448ec86ac832c4}{identity\+\_\+encr\+\_\+\+SECRETKEYBYTES}}]\+, uint8\+\_\+t pk\+\_\+encryption\+[\doxymbox{\hyperlink{identity_8h_aaf87e49eeff5d72ffa55789c49a8161e}{identity\+\_\+encr\+\_\+\+PUBLICKEYBYTES}}]\+)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{identity_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{identity_8c_ab9511f3fcaf437899bab4cd3e994cf56}\index{identity.c@{identity.c}!identity\_from\_master\_key@{identity\_from\_master\_key}}
+\index{identity\_from\_master\_key@{identity\_from\_master\_key}!identity.c@{identity.c}}
+\doxysubsubsection{\texorpdfstring{identity\_from\_master\_key()}{identity\_from\_master\_key()}}
+{\footnotesize\ttfamily \label{identity_8c_ab9511f3fcaf437899bab4cd3e994cf56} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} identity\+\_\+from\+\_\+master\+\_\+key (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{master\+\_\+key}{\+[identity\+\_\+\+MASTERKEYBYTES]\+, }\item[{uint8\+\_\+t}]{sk\+\_\+signature}{\+[identity\+\_\+sign\+\_\+\+SECRETKEYBYTES]\+, }\item[{uint8\+\_\+t}]{pk\+\_\+signature}{\+[identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES]\+, }\item[{uint8\+\_\+t}]{sk\+\_\+encryption}{\+[identity\+\_\+encr\+\_\+\+SECRETKEYBYTES]\+, }\item[{uint8\+\_\+t}]{pk\+\_\+encryption}{\+[identity\+\_\+encr\+\_\+\+PUBLICKEYBYTES]\+}\end{DoxyParamCaption})}
+
+\Hypertarget{identity_8c_a4d2426b4684999cc48be602ef396bfb7}\index{identity.c@{identity.c}!identity\_generate@{identity\_generate}}
+\index{identity\_generate@{identity\_generate}!identity.c@{identity.c}}
+\doxysubsubsection{\texorpdfstring{identity\_generate()}{identity\_generate()}}
+{\footnotesize\ttfamily \label{identity_8c_a4d2426b4684999cc48be602ef396bfb7} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} identity\+\_\+generate (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{master\+\_\+key}{\+[identity\+\_\+\+MASTERKEYBYTES]\+, }\item[{uint8\+\_\+t}]{sk\+\_\+signature}{\+[identity\+\_\+sign\+\_\+\+SECRETKEYBYTES]\+, }\item[{uint8\+\_\+t}]{pk\+\_\+signature}{\+[identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES]\+, }\item[{uint8\+\_\+t}]{sk\+\_\+encryption}{\+[identity\+\_\+encr\+\_\+\+SECRETKEYBYTES]\+, }\item[{uint8\+\_\+t}]{pk\+\_\+encryption}{\+[identity\+\_\+encr\+\_\+\+PUBLICKEYBYTES]\+}\end{DoxyParamCaption})}
+

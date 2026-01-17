@@ -1,0 +1,75 @@
+\doxysection{result.\+h}
+\hypertarget{result_8h_source}{}\label{result_8h_source}\index{shared/include/shared/result.h@{shared/include/shared/result.h}}
+\doxymbox{\hyperlink{result_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00004\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}}\ =\ 0,}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \ \ \ \ \textcolor{comment}{//\ Shared}}
+\DoxyCodeLine{00007\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aba3ed5bd07ec82f6f984a5944ad83a61}{ENCODING\_BASE58\_ERR}},}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{comment}{//\ Core}}
+\DoxyCodeLine{00010\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a6bd5dcf2a7f94d16594dc21dd6206dcc}{CORE\_ACCOUNT\_CREATE\_FAILED}},}
+\DoxyCodeLine{00011\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a73c346157050653702dbc8194f694a9d}{CORE\_ACCOUNT\_IMPORT\_FAILED}},}
+\DoxyCodeLine{00012\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a97b40998ccd52f8b69ea042e5ccab09b}{CORE\_ACCOUNT\_NAME\_TOO\_LONG}},}
+\DoxyCodeLine{00013\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a215924194a1a8854360c5ea8bd5ef703}{CORE\_ACCOUNT\_NAME\_EMPTY}},}
+\DoxyCodeLine{00014\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3ad0916055eb64550e0064ec99ef67a6e5}{CORE\_ACCOUNT\_PREFIX\_TOO\_LONG}},}
+\DoxyCodeLine{00015\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a648798ae6e3af24164a67966e7388cda}{CORE\_ACCOUNT\_PREFIX\_EMPTY}},}
+\DoxyCodeLine{00016\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a8bb4e18c419643918878632b0698f8c2}{CORE\_ACCOUNT\_FORGED}},}
+\DoxyCodeLine{00017\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aa4b870d842583fc634fe3be4daad4451}{CORE\_ACCOUNT\_USERNAME\_FORGED}},}
+\DoxyCodeLine{00018\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3ae90800cbde59226e00d623800e3dd95b}{CORE\_ACCOUNT\_USERNAME\_CORRUPTED}},}
+\DoxyCodeLine{00019\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3ab2731147cb6a6fec388adabef9f17df0}{CORE\_ACCOUNT\_USERNAME\_INVALID\_SIZE}},}
+\DoxyCodeLine{00020\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a7e6abaa5333a60f2843fbe0d85d35e2c}{CORE\_ACCOUNT\_USERNAME\_INVALID\_CHECKSUM}},}
+\DoxyCodeLine{00021\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aa5a39b4460b0031d05821a1c61de8d53}{CORE\_ACCOUNT\_USERNAME\_UNSUPPORTED\_SYMBOL}},}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//\ Crypto}}
+\DoxyCodeLine{00024\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aaf3008d66f4b97392ef18a76534c970e}{CRYPTO\_ERR}},}
+\DoxyCodeLine{00025\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a60d0d2b43cc6e5546470c2b90ecd9b17}{CRYPTO\_INVALID\_SIGNATURE}},}
+\DoxyCodeLine{00026\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a838943531b10a5e8c4c728f2840110af}{CRYPTO\_AUTH\_FAILED}},}
+\DoxyCodeLine{00027\ \}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}};}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ }
+\DoxyCodeLine{00030\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ \doxymbox{\hyperlink{result_8h_acaeb76715b2c0627e1a4eaa86efc6782}{result\_to\_string}}(\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ err)\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{switch}\ (err)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}}:}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}OK"{}};}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aba3ed5bd07ec82f6f984a5944ad83a61}{ENCODING\_BASE58\_ERR}}:}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}SHARED.Base58:\ Encoding\ base58\ failed"{}};}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a6bd5dcf2a7f94d16594dc21dd6206dcc}{CORE\_ACCOUNT\_CREATE\_FAILED}}:}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ Failed\ to\ create\ account"{}};}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a73c346157050653702dbc8194f694a9d}{CORE\_ACCOUNT\_IMPORT\_FAILED}}:}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ Failed\ to\ import\ account"{}};}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a97b40998ccd52f8b69ea042e5ccab09b}{CORE\_ACCOUNT\_NAME\_TOO\_LONG}}:}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ Given\ name\ is\ too\ long"{}};}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a215924194a1a8854360c5ea8bd5ef703}{CORE\_ACCOUNT\_NAME\_EMPTY}}:}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ Given\ an\ empty\ name"{}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3ad0916055eb64550e0064ec99ef67a6e5}{CORE\_ACCOUNT\_PREFIX\_TOO\_LONG}}:}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ Given\ prefix\ is\ too\ long"{}};}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a648798ae6e3af24164a67966e7388cda}{CORE\_ACCOUNT\_PREFIX\_EMPTY}}:}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ Prefix\ is\ empty"{}};}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a8bb4e18c419643918878632b0698f8c2}{CORE\_ACCOUNT\_FORGED}}:}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ Account\ is\ forged"{}};}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aa4b870d842583fc634fe3be4daad4451}{CORE\_ACCOUNT\_USERNAME\_FORGED}}:}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ username\ is\ not\ authentic"{}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3ae90800cbde59226e00d623800e3dd95b}{CORE\_ACCOUNT\_USERNAME\_CORRUPTED}}:}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ username\ is\ corrupted"{}};}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3ab2731147cb6a6fec388adabef9f17df0}{CORE\_ACCOUNT\_USERNAME\_INVALID\_SIZE}}:}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ username\ size\ is\ invalid"{}};}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a7e6abaa5333a60f2843fbe0d85d35e2c}{CORE\_ACCOUNT\_USERNAME\_INVALID\_CHECKSUM}}:}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ invalid\ username\ checksum"{}};}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aa5a39b4460b0031d05821a1c61de8d53}{CORE\_ACCOUNT\_USERNAME\_UNSUPPORTED\_SYMBOL}}:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CORE.Account:\ username\ contains\ unsupported\ symbol"{}};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Crypto}}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aaf3008d66f4b97392ef18a76534c970e}{CRYPTO\_ERR}}:}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a60d0d2b43cc6e5546470c2b90ecd9b17}{CRYPTO\_INVALID\_SIGNATURE}}:}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a838943531b10a5e8c4c728f2840110af}{CRYPTO\_AUTH\_FAILED}}:}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}CRYPTO:\ authentication\ failed"{}};}
+\DoxyCodeLine{00066\ \ \ \ \ \}}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{stringliteral}{"{}Unknown\ error"{}};}
+\DoxyCodeLine{00069\ \}}
+
+\end{DoxyCode}

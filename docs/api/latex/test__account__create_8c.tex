@@ -1,0 +1,73 @@
+\doxysection{tests/\+core/\+test\+\_\+account\+\_\+create.c File Reference}
+\hypertarget{test__account__create_8c}{}\label{test__account__create_8c}\index{tests/core/test\_account\_create.c@{tests/core/test\_account\_create.c}}
+{\ttfamily \+\#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \+\#include $<$stddef.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \+\#include $<$cmocka.\+h$>$}\newline
+{\ttfamily \+\#include "{}core/\+account.\+h"{}}\newline
+{\ttfamily \+\#include "{}shared/\+result.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{test__account__create_8c_a96a8b080e8f17feb77f12c61e2f03484}{test\+\_\+account\+\_\+create\+\_\+valid}} ()
+\item 
+static void \doxymbox{\hyperlink{test__account__create_8c_a9316105cef18d632069d0430a74ca0f4}{test\+\_\+account\+\_\+create\+\_\+name\+\_\+too\+\_\+long}} ()
+\item 
+static void \doxymbox{\hyperlink{test__account__create_8c_a2cce6abdf960533c83dcaf977dd4f5fb}{test\+\_\+account\+\_\+create\+\_\+empty\+\_\+name}} ()
+\item 
+static void \doxymbox{\hyperlink{test__account__create_8c_ad2a637d283de7fae79eeba23320726cc}{test\+\_\+account\+\_\+create\+\_\+prefix\+\_\+too\+\_\+long}} ()
+\item 
+static void \doxymbox{\hyperlink{test__account__create_8c_a76639a1a559e304b7253a163b7cedbbe}{test\+\_\+account\+\_\+create\+\_\+empty\+\_\+prefix}} ()
+\item 
+static void \doxymbox{\hyperlink{test__account__create_8c_a43c6075b07f99b29937c53c14d7ea329}{test\+\_\+account\+\_\+create\+\_\+invalid\+\_\+prefix}} ()
+\item 
+int \doxymbox{\hyperlink{test__account__create_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{test__account__create_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{test__account__create_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{test\_account\_create.c@{test\_account\_create.c}!main@{main}}
+\index{main@{main}!test\_account\_create.c@{test\_account\_create.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{test__account__create_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__account__create_8c_a2cce6abdf960533c83dcaf977dd4f5fb}\index{test\_account\_create.c@{test\_account\_create.c}!test\_account\_create\_empty\_name@{test\_account\_create\_empty\_name}}
+\index{test\_account\_create\_empty\_name@{test\_account\_create\_empty\_name}!test\_account\_create.c@{test\_account\_create.c}}
+\doxysubsubsection{\texorpdfstring{test\_account\_create\_empty\_name()}{test\_account\_create\_empty\_name()}}
+{\footnotesize\ttfamily \label{test__account__create_8c_a2cce6abdf960533c83dcaf977dd4f5fb} 
+void test\+\_\+account\+\_\+create\+\_\+empty\+\_\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__account__create_8c_a76639a1a559e304b7253a163b7cedbbe}\index{test\_account\_create.c@{test\_account\_create.c}!test\_account\_create\_empty\_prefix@{test\_account\_create\_empty\_prefix}}
+\index{test\_account\_create\_empty\_prefix@{test\_account\_create\_empty\_prefix}!test\_account\_create.c@{test\_account\_create.c}}
+\doxysubsubsection{\texorpdfstring{test\_account\_create\_empty\_prefix()}{test\_account\_create\_empty\_prefix()}}
+{\footnotesize\ttfamily \label{test__account__create_8c_a76639a1a559e304b7253a163b7cedbbe} 
+void test\+\_\+account\+\_\+create\+\_\+empty\+\_\+prefix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__account__create_8c_a43c6075b07f99b29937c53c14d7ea329}\index{test\_account\_create.c@{test\_account\_create.c}!test\_account\_create\_invalid\_prefix@{test\_account\_create\_invalid\_prefix}}
+\index{test\_account\_create\_invalid\_prefix@{test\_account\_create\_invalid\_prefix}!test\_account\_create.c@{test\_account\_create.c}}
+\doxysubsubsection{\texorpdfstring{test\_account\_create\_invalid\_prefix()}{test\_account\_create\_invalid\_prefix()}}
+{\footnotesize\ttfamily \label{test__account__create_8c_a43c6075b07f99b29937c53c14d7ea329} 
+void test\+\_\+account\+\_\+create\+\_\+invalid\+\_\+prefix (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__account__create_8c_a9316105cef18d632069d0430a74ca0f4}\index{test\_account\_create.c@{test\_account\_create.c}!test\_account\_create\_name\_too\_long@{test\_account\_create\_name\_too\_long}}
+\index{test\_account\_create\_name\_too\_long@{test\_account\_create\_name\_too\_long}!test\_account\_create.c@{test\_account\_create.c}}
+\doxysubsubsection{\texorpdfstring{test\_account\_create\_name\_too\_long()}{test\_account\_create\_name\_too\_long()}}
+{\footnotesize\ttfamily \label{test__account__create_8c_a9316105cef18d632069d0430a74ca0f4} 
+void test\+\_\+account\+\_\+create\+\_\+name\+\_\+too\+\_\+long (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__account__create_8c_ad2a637d283de7fae79eeba23320726cc}\index{test\_account\_create.c@{test\_account\_create.c}!test\_account\_create\_prefix\_too\_long@{test\_account\_create\_prefix\_too\_long}}
+\index{test\_account\_create\_prefix\_too\_long@{test\_account\_create\_prefix\_too\_long}!test\_account\_create.c@{test\_account\_create.c}}
+\doxysubsubsection{\texorpdfstring{test\_account\_create\_prefix\_too\_long()}{test\_account\_create\_prefix\_too\_long()}}
+{\footnotesize\ttfamily \label{test__account__create_8c_ad2a637d283de7fae79eeba23320726cc} 
+void test\+\_\+account\+\_\+create\+\_\+prefix\+\_\+too\+\_\+long (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__account__create_8c_a96a8b080e8f17feb77f12c61e2f03484}\index{test\_account\_create.c@{test\_account\_create.c}!test\_account\_create\_valid@{test\_account\_create\_valid}}
+\index{test\_account\_create\_valid@{test\_account\_create\_valid}!test\_account\_create.c@{test\_account\_create.c}}
+\doxysubsubsection{\texorpdfstring{test\_account\_create\_valid()}{test\_account\_create\_valid()}}
+{\footnotesize\ttfamily \label{test__account__create_8c_a96a8b080e8f17feb77f12c61e2f03484} 
+void test\+\_\+account\+\_\+create\+\_\+valid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+

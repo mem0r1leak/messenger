@@ -1,0 +1,105 @@
+\doxysection{test\+\_\+sign.\+c}
+\hypertarget{test__sign_8c_source}{}\label{test__sign_8c_source}\index{tests/crypto/test\_sign.c@{tests/crypto/test\_sign.c}}
+\doxymbox{\hyperlink{test__sign_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <math.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <setjmp.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <cmocka.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{sign_8h}{crypto/sign.h}}"{}}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{identity_8h}{crypto/identity.h}}"{}}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{result_8h}{shared/result.h}}"{}}}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{test__sign_8c_adb6445d857252fbf1d5f977ec5bc2070}{test\_sign}}()\ \{}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ sk[]\ =\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \ \ \ \ 0x31,\ 0x62,\ 0x1C,\ 0xBA,\ 0x2E,\ 0x5F,\ 0x9B,\ 0xA3,\ 0xC9,\ 0x91,\ 0x85,\ 0xEA,}
+\DoxyCodeLine{00016\ \ \ \ \ \ \ \ \ 0x10,\ 0xAA,\ 0xBD,\ 0x53,\ 0xCF,\ 0x80,\ 0x9B,\ 0x23,\ 0x50,\ 0xAE,\ 0x08,\ 0x62,}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ 0xBF,\ 0xF6,\ 0x98,\ 0x8C,\ 0x6D,\ 0x8E,\ 0xA6,\ 0xB4,\ 0xB1,\ 0x41,\ 0x74,\ 0x2D,}
+\DoxyCodeLine{00018\ \ \ \ \ \ \ \ \ 0x06,\ 0xF1,\ 0x68,\ 0xD0,\ 0x2A,\ 0x11,\ 0x30,\ 0x8B,\ 0x12,\ 0xE1,\ 0xD9,\ 0x77,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ 0xB2,\ 0x5E,\ 0xC7,\ 0x66,\ 0x34,\ 0x92,\ 0x3D,\ 0x72,\ 0x04,\ 0xA3,\ 0x37,\ 0xE4,}
+\DoxyCodeLine{00020\ \ \ \ \ \ \ \ \ 0x4E,\ 0x01,\ 0x0A,\ 0x12}
+\DoxyCodeLine{00021\ \ \ \ \ \};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *message\ =\ \textcolor{stringliteral}{"{}hello"{}};}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ expected\_signature[\doxymbox{\hyperlink{sign_8h_ab63961135f8f5d9b93bc6d0394c1146a}{signature\_BYTES}}]\ =\ \{}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ 0x23,\ 0x3C,\ 0x61,\ 0x50,\ 0xDD,\ 0x6D,\ 0x38,\ 0x5E,}
+\DoxyCodeLine{00027\ \ \ \ \ \ \ \ \ 0x3C,\ 0x46,\ 0xC3,\ 0x49,\ 0x86,\ 0xA2,\ 0xFF,\ 0xAC,}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ 0xB6,\ 0xE3,\ 0x10,\ 0x37,\ 0x11,\ 0xB9,\ 0x68,\ 0x49,}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ 0x90,\ 0xF5,\ 0x73,\ 0x4B,\ 0xA7,\ 0xE4,\ 0xAB,\ 0xC0,}
+\DoxyCodeLine{00030\ \ \ \ \ \ \ \ \ 0x27,\ 0xDE,\ 0xD1,\ 0xFC,\ 0x7C,\ 0x07,\ 0x7C,\ 0x29,}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ 0xCA,\ 0x48,\ 0x0D,\ 0xC8,\ 0x46,\ 0xB3,\ 0x87,\ 0xDE,}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ 0x36,\ 0xB0,\ 0x50,\ 0x2E,\ 0xA1,\ 0x75,\ 0x72,\ 0x5B,}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ 0x51,\ 0x84,\ 0x64,\ 0x41,\ 0x93,\ 0xD0,\ 0xCC,\ 0x03}
+\DoxyCodeLine{00034\ \ \ \ \ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ uint8\_t\ signature[\doxymbox{\hyperlink{sign_8h_ab63961135f8f5d9b93bc6d0394c1146a}{signature\_BYTES}}];}
+\DoxyCodeLine{00037\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ r\ =\ \doxymbox{\hyperlink{sign_8h_ac269aef21c7c1b0931a65612ec8c594d}{cryptosign}}(signature,\ (\textcolor{keyword}{const}\ uint8\_t*)message,\ strlen(message),\ sk);}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ assert\_int\_equal(r,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}});}
+\DoxyCodeLine{00040\ \ \ \ \ assert\_memory\_equal(signature,\ expected\_signature,\ \doxymbox{\hyperlink{sign_8h_ab63961135f8f5d9b93bc6d0394c1146a}{signature\_BYTES}});}
+\DoxyCodeLine{00041\ \}}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{test__sign_8c_a444179a3dad0ce38b8e18b2c6a8b3c06}{test\_sign\_verify\_valid}}()\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ signature[\doxymbox{\hyperlink{sign_8h_ab63961135f8f5d9b93bc6d0394c1146a}{signature\_BYTES}}]\ =\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ 0x23,\ 0x3C,\ 0x61,\ 0x50,\ 0xDD,\ 0x6D,\ 0x38,\ 0x5E,}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ 0x3C,\ 0x46,\ 0xC3,\ 0x49,\ 0x86,\ 0xA2,\ 0xFF,\ 0xAC,}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ 0xB6,\ 0xE3,\ 0x10,\ 0x37,\ 0x11,\ 0xB9,\ 0x68,\ 0x49,}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ 0x90,\ 0xF5,\ 0x73,\ 0x4B,\ 0xA7,\ 0xE4,\ 0xAB,\ 0xC0,}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ 0x27,\ 0xDE,\ 0xD1,\ 0xFC,\ 0x7C,\ 0x07,\ 0x7C,\ 0x29,}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ 0xCA,\ 0x48,\ 0x0D,\ 0xC8,\ 0x46,\ 0xB3,\ 0x87,\ 0xDE,}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ 0x36,\ 0xB0,\ 0x50,\ 0x2E,\ 0xA1,\ 0x75,\ 0x72,\ 0x5B,}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ 0x51,\ 0x84,\ 0x64,\ 0x41,\ 0x93,\ 0xD0,\ 0xCC,\ 0x03}
+\DoxyCodeLine{00053\ \ \ \ \ \};}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ pk[\doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\_sign\_PUBLICKEYBYTES}}]\ =\ \{}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ 0xB1,\ 0x41,\ 0x74,\ 0x2D,\ 0x06,\ 0xF1,\ 0x68,\ 0xD0,\ 0x2A,\ 0x11,\ 0x30,\ 0x8B,}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ 0x12,\ 0xE1,\ 0xD9,\ 0x77,\ 0xB2,\ 0x5E,\ 0xC7,\ 0x66,\ 0x34,\ 0x92,\ 0x3D,\ 0x72,}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ 0x04,\ 0xA3,\ 0x37,\ 0xE4,\ 0x4E,\ 0x01,\ 0x0A,\ 0x12}
+\DoxyCodeLine{00059\ \ \ \ \ \};}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *message\ =\ \textcolor{stringliteral}{"{}hello"{}};}
+\DoxyCodeLine{00062\ }
+\DoxyCodeLine{00063\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ r\ =\ \doxymbox{\hyperlink{sign_8h_a143a755beeffcaf49ed5ced713408a67}{crypto\_sign\_verify}}(signature,\ (\textcolor{keyword}{const}\ uint8\_t*)message,\ strlen(message),\ pk);}
+\DoxyCodeLine{00064\ \ \ \ \ assert\_int\_equal(r,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}});}
+\DoxyCodeLine{00065\ \}}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00067\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{test__sign_8c_a733ef3ba29387f0bffd81d7570761d6b}{test\_sign\_verify\_invalid}}()\ \{}
+\DoxyCodeLine{00068\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ signature[\doxymbox{\hyperlink{sign_8h_ab63961135f8f5d9b93bc6d0394c1146a}{signature\_BYTES}}]\ =\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ 0x23,\ 0x3C,\ 0x61,\ 0x50,\ 0xDD,\ 0x6D,\ 0x38,\ 0x5E,}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ 0x3C,\ 0x46,\ 0xC3,\ 0x49,\ 0x86,\ 0xA2,\ 0xFF,\ 0xAC,}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ 0xB6,\ 0xE3,\ 0x10,\ 0x37,\ 0x11,\ 0xB9,\ 0x68,\ 0x49,}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ 0x90,\ 0xF5,\ 0x73,\ 0x4B,\ 0xA7,\ 0xE4,\ 0xAB,\ 0xC0,}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ 0x27,\ 0xDE,\ 0xD1,\ 0xFC,\ 0x7C,\ 0x07,\ 0x7C,\ 0x29,}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ 0xCA,\ 0x48,\ 0x0D,\ 0xC8,\ 0x46,\ 0xB3,\ 0x87,\ 0xDE,}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ 0x36,\ 0xB0,\ 0x50,\ 0x2E,\ 0xA1,\ 0x75,\ 0x72,\ 0x5B,}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ 0x51,\ 0x84,\ 0x64,\ 0x41,\ 0x93,\ 0xD0,\ 0xCC,\ 0x00\ \textcolor{comment}{//\ <-\/\ invalid\ byte}}
+\DoxyCodeLine{00077\ \ \ \ \ \};}
+\DoxyCodeLine{00078\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ pk[\doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\_sign\_PUBLICKEYBYTES}}]\ =\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ 0xB1,\ 0x41,\ 0x74,\ 0x2D,\ 0x06,\ 0xF1,\ 0x68,\ 0xD0,\ 0x2A,\ 0x11,\ 0x30,\ 0x8B,}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ 0x12,\ 0xE1,\ 0xD9,\ 0x77,\ 0xB2,\ 0x5E,\ 0xC7,\ 0x66,\ 0x34,\ 0x92,\ 0x3D,\ 0x72,}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ 0x04,\ 0xA3,\ 0x37,\ 0xE4,\ 0x4E,\ 0x01,\ 0x0A,\ 0x12}
+\DoxyCodeLine{00083\ \ \ \ \ \};}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *message\ =\ \textcolor{stringliteral}{"{}hello"{}};}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ r\ =\ \doxymbox{\hyperlink{sign_8h_a143a755beeffcaf49ed5ced713408a67}{crypto\_sign\_verify}}(signature,\ (\textcolor{keyword}{const}\ uint8\_t*)message,\ strlen(message),\ pk);}
+\DoxyCodeLine{00088\ \ \ \ \ assert\_int\_equal(r,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a60d0d2b43cc6e5546470c2b90ecd9b17}{CRYPTO\_INVALID\_SIGNATURE}});}
+\DoxyCodeLine{00089\ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \textcolor{keywordtype}{int}\ \doxymbox{\hyperlink{test__sign_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}}(\textcolor{keywordtype}{void})\ \{}
+\DoxyCodeLine{00092\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keyword}{struct\ }CMUnitTest\ tests[]\ =\ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ cmocka\_unit\_test(\doxymbox{\hyperlink{test__sign_8c_adb6445d857252fbf1d5f977ec5bc2070}{test\_sign}}),}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ cmocka\_unit\_test(\doxymbox{\hyperlink{test__sign_8c_a444179a3dad0ce38b8e18b2c6a8b3c06}{test\_sign\_verify\_valid}}),}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ cmocka\_unit\_test(\doxymbox{\hyperlink{test__sign_8c_a733ef3ba29387f0bffd81d7570761d6b}{test\_sign\_verify\_invalid}})}
+\DoxyCodeLine{00096\ \ \ \ \ \};}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keywordflow}{return}\ cmocka\_run\_group\_tests(tests,\ NULL,\ NULL);}
+\DoxyCodeLine{00099\ \}}
+
+\end{DoxyCode}

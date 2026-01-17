@@ -1,0 +1,28 @@
+\doxysection{crypto/\+src/\+sign.c File Reference}
+\hypertarget{sign_8c}{}\label{sign_8c}\index{crypto/src/sign.c@{crypto/src/sign.c}}
+{\ttfamily \+\#include "{}crypto/\+sign.\+h"{}}\newline
+{\ttfamily \+\#include "{}shared/\+result.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{sign_8c_ac269aef21c7c1b0931a65612ec8c594d}{cryptosign}} (uint8\+\_\+t signature\+[\doxymbox{\hyperlink{sign_8h_ab63961135f8f5d9b93bc6d0394c1146a}{signature\+\_\+\+BYTES}}]\+, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}message, unsigned long long message\+\_\+len, const uint8\+\_\+t sk\+[\doxymbox{\hyperlink{identity_8h_ac0aca7d28010844e7a11f99d6aa99854}{identity\+\_\+sign\+\_\+\+SECRETKEYBYTES}}]\+)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{sign_8c_a143a755beeffcaf49ed5ced713408a67}{crypto\+\_\+sign\+\_\+verify}} (const uint8\+\_\+t signature\+[\doxymbox{\hyperlink{sign_8h_ab63961135f8f5d9b93bc6d0394c1146a}{signature\+\_\+\+BYTES}}]\+, const uint8\+\_\+t \texorpdfstring{$\ast$}{*}message, unsigned long long message\+\_\+len, const uint8\+\_\+t pk\+[\doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES}}]\+)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{sign_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{sign_8c_a143a755beeffcaf49ed5ced713408a67}\index{sign.c@{sign.c}!crypto\_sign\_verify@{crypto\_sign\_verify}}
+\index{crypto\_sign\_verify@{crypto\_sign\_verify}!sign.c@{sign.c}}
+\doxysubsubsection{\texorpdfstring{crypto\_sign\_verify()}{crypto\_sign\_verify()}}
+{\footnotesize\ttfamily \label{sign_8c_a143a755beeffcaf49ed5ced713408a67} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} crypto\+\_\+sign\+\_\+verify (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{signature}{\+[signature\+\_\+\+BYTES]\+, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{message}{, }\item[{unsigned long long}]{message\+\_\+len}{, }\item[{const uint8\+\_\+t}]{pk}{\+[identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES]\+}\end{DoxyParamCaption})}
+
+\Hypertarget{sign_8c_ac269aef21c7c1b0931a65612ec8c594d}\index{sign.c@{sign.c}!cryptosign@{cryptosign}}
+\index{cryptosign@{cryptosign}!sign.c@{sign.c}}
+\doxysubsubsection{\texorpdfstring{cryptosign()}{cryptosign()}}
+{\footnotesize\ttfamily \label{sign_8c_ac269aef21c7c1b0931a65612ec8c594d} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} cryptosign (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{signature}{\+[signature\+\_\+\+BYTES]\+, }\item[{const uint8\+\_\+t \texorpdfstring{$\ast$}{*}}]{message}{, }\item[{unsigned long long}]{message\+\_\+len}{, }\item[{const uint8\+\_\+t}]{sk}{\+[identity\+\_\+sign\+\_\+\+SECRETKEYBYTES]\+}\end{DoxyParamCaption})}
+

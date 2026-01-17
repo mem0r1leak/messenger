@@ -1,0 +1,80 @@
+\doxysection{crypto/\+include/\+crypto/\+identity.h File Reference}
+\hypertarget{identity_8h}{}\label{identity_8h}\index{crypto/include/crypto/identity.h@{crypto/include/crypto/identity.h}}
+{\ttfamily \+\#include $<$sodium/\+crypto\+\_\+box.\+h$>$}\newline
+{\ttfamily \+\#include $<$sodium/\+crypto\+\_\+hash\+\_\+sha256.\+h$>$}\newline
+{\ttfamily \+\#include $<$sodium/\+crypto\+\_\+sign.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include $<$sodium.\+h$>$}\newline
+{\ttfamily \+\#include "{}shared/\+result.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{identity_8h_aaaa5d782a209df9d4b96dd536baeab68}{identity\+\_\+\+MASTERKEYBYTES}}~crypto\+\_\+box\+\_\+\+SEEDBYTES
+\item 
+\+\#define \doxymbox{\hyperlink{identity_8h_ac0aca7d28010844e7a11f99d6aa99854}{identity\+\_\+sign\+\_\+\+SECRETKEYBYTES}}~crypto\+\_\+sign\+\_\+\+SECRETKEYBYTES
+\item 
+\+\#define \doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES}}~crypto\+\_\+sign\+\_\+\+PUBLICKEYBYTES
+\item 
+\+\#define \doxymbox{\hyperlink{identity_8h_a93b1cc05866e4efad4448ec86ac832c4}{identity\+\_\+encr\+\_\+\+SECRETKEYBYTES}}~crypto\+\_\+box\+\_\+\+SECRETKEYBYTES
+\item 
+\+\#define \doxymbox{\hyperlink{identity_8h_aaf87e49eeff5d72ffa55789c49a8161e}{identity\+\_\+encr\+\_\+\+PUBLICKEYBYTES}}~crypto\+\_\+box\+\_\+\+PUBLICKEYBYTES
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{identity_8h_a4d2426b4684999cc48be602ef396bfb7}{identity\+\_\+generate}} (uint8\+\_\+t master\+\_\+key\+[\doxymbox{\hyperlink{identity_8h_aaaa5d782a209df9d4b96dd536baeab68}{identity\+\_\+\+MASTERKEYBYTES}}]\+, uint8\+\_\+t sk\+\_\+signature\+[\doxymbox{\hyperlink{identity_8h_ac0aca7d28010844e7a11f99d6aa99854}{identity\+\_\+sign\+\_\+\+SECRETKEYBYTES}}]\+, uint8\+\_\+t pk\+\_\+signature\+[\doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES}}]\+, uint8\+\_\+t sk\+\_\+encryption\+[\doxymbox{\hyperlink{identity_8h_a93b1cc05866e4efad4448ec86ac832c4}{identity\+\_\+encr\+\_\+\+SECRETKEYBYTES}}]\+, uint8\+\_\+t pk\+\_\+encryption\+[\doxymbox{\hyperlink{identity_8h_aaf87e49eeff5d72ffa55789c49a8161e}{identity\+\_\+encr\+\_\+\+PUBLICKEYBYTES}}]\+)
+\item 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} \doxymbox{\hyperlink{identity_8h_ab9511f3fcaf437899bab4cd3e994cf56}{identity\+\_\+from\+\_\+master\+\_\+key}} (const uint8\+\_\+t master\+\_\+key\+[\doxymbox{\hyperlink{identity_8h_aaaa5d782a209df9d4b96dd536baeab68}{identity\+\_\+\+MASTERKEYBYTES}}]\+, uint8\+\_\+t sk\+\_\+signature\+[\doxymbox{\hyperlink{identity_8h_ac0aca7d28010844e7a11f99d6aa99854}{identity\+\_\+sign\+\_\+\+SECRETKEYBYTES}}]\+, uint8\+\_\+t pk\+\_\+signature\+[\doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES}}]\+, uint8\+\_\+t sk\+\_\+encryption\+[\doxymbox{\hyperlink{identity_8h_a93b1cc05866e4efad4448ec86ac832c4}{identity\+\_\+encr\+\_\+\+SECRETKEYBYTES}}]\+, uint8\+\_\+t pk\+\_\+encryption\+[\doxymbox{\hyperlink{identity_8h_aaf87e49eeff5d72ffa55789c49a8161e}{identity\+\_\+encr\+\_\+\+PUBLICKEYBYTES}}]\+)
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{identity_8h_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{identity_8h_aaf87e49eeff5d72ffa55789c49a8161e}\index{identity.h@{identity.h}!identity\_encr\_PUBLICKEYBYTES@{identity\_encr\_PUBLICKEYBYTES}}
+\index{identity\_encr\_PUBLICKEYBYTES@{identity\_encr\_PUBLICKEYBYTES}!identity.h@{identity.h}}
+\doxysubsubsection{\texorpdfstring{identity\_encr\_PUBLICKEYBYTES}{identity\_encr\_PUBLICKEYBYTES}}
+{\footnotesize\ttfamily \label{identity_8h_aaf87e49eeff5d72ffa55789c49a8161e} 
+\+\#define identity\+\_\+encr\+\_\+\+PUBLICKEYBYTES~crypto\+\_\+box\+\_\+\+PUBLICKEYBYTES}
+
+\Hypertarget{identity_8h_a93b1cc05866e4efad4448ec86ac832c4}\index{identity.h@{identity.h}!identity\_encr\_SECRETKEYBYTES@{identity\_encr\_SECRETKEYBYTES}}
+\index{identity\_encr\_SECRETKEYBYTES@{identity\_encr\_SECRETKEYBYTES}!identity.h@{identity.h}}
+\doxysubsubsection{\texorpdfstring{identity\_encr\_SECRETKEYBYTES}{identity\_encr\_SECRETKEYBYTES}}
+{\footnotesize\ttfamily \label{identity_8h_a93b1cc05866e4efad4448ec86ac832c4} 
+\+\#define identity\+\_\+encr\+\_\+\+SECRETKEYBYTES~crypto\+\_\+box\+\_\+\+SECRETKEYBYTES}
+
+\Hypertarget{identity_8h_aaaa5d782a209df9d4b96dd536baeab68}\index{identity.h@{identity.h}!identity\_MASTERKEYBYTES@{identity\_MASTERKEYBYTES}}
+\index{identity\_MASTERKEYBYTES@{identity\_MASTERKEYBYTES}!identity.h@{identity.h}}
+\doxysubsubsection{\texorpdfstring{identity\_MASTERKEYBYTES}{identity\_MASTERKEYBYTES}}
+{\footnotesize\ttfamily \label{identity_8h_aaaa5d782a209df9d4b96dd536baeab68} 
+\+\#define identity\+\_\+\+MASTERKEYBYTES~crypto\+\_\+box\+\_\+\+SEEDBYTES}
+
+\Hypertarget{identity_8h_a94cb0eeb35acb9984910776fd9be2155}\index{identity.h@{identity.h}!identity\_sign\_PUBLICKEYBYTES@{identity\_sign\_PUBLICKEYBYTES}}
+\index{identity\_sign\_PUBLICKEYBYTES@{identity\_sign\_PUBLICKEYBYTES}!identity.h@{identity.h}}
+\doxysubsubsection{\texorpdfstring{identity\_sign\_PUBLICKEYBYTES}{identity\_sign\_PUBLICKEYBYTES}}
+{\footnotesize\ttfamily \label{identity_8h_a94cb0eeb35acb9984910776fd9be2155} 
+\+\#define identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES~crypto\+\_\+sign\+\_\+\+PUBLICKEYBYTES}
+
+\Hypertarget{identity_8h_ac0aca7d28010844e7a11f99d6aa99854}\index{identity.h@{identity.h}!identity\_sign\_SECRETKEYBYTES@{identity\_sign\_SECRETKEYBYTES}}
+\index{identity\_sign\_SECRETKEYBYTES@{identity\_sign\_SECRETKEYBYTES}!identity.h@{identity.h}}
+\doxysubsubsection{\texorpdfstring{identity\_sign\_SECRETKEYBYTES}{identity\_sign\_SECRETKEYBYTES}}
+{\footnotesize\ttfamily \label{identity_8h_ac0aca7d28010844e7a11f99d6aa99854} 
+\+\#define identity\+\_\+sign\+\_\+\+SECRETKEYBYTES~crypto\+\_\+sign\+\_\+\+SECRETKEYBYTES}
+
+
+
+\label{doc-func-members}
+\Hypertarget{identity_8h_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{identity_8h_ab9511f3fcaf437899bab4cd3e994cf56}\index{identity.h@{identity.h}!identity\_from\_master\_key@{identity\_from\_master\_key}}
+\index{identity\_from\_master\_key@{identity\_from\_master\_key}!identity.h@{identity.h}}
+\doxysubsubsection{\texorpdfstring{identity\_from\_master\_key()}{identity\_from\_master\_key()}}
+{\footnotesize\ttfamily \label{identity_8h_ab9511f3fcaf437899bab4cd3e994cf56} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} identity\+\_\+from\+\_\+master\+\_\+key (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t}]{master\+\_\+key}{\+[identity\+\_\+\+MASTERKEYBYTES]\+, }\item[{uint8\+\_\+t}]{sk\+\_\+signature}{\+[identity\+\_\+sign\+\_\+\+SECRETKEYBYTES]\+, }\item[{uint8\+\_\+t}]{pk\+\_\+signature}{\+[identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES]\+, }\item[{uint8\+\_\+t}]{sk\+\_\+encryption}{\+[identity\+\_\+encr\+\_\+\+SECRETKEYBYTES]\+, }\item[{uint8\+\_\+t}]{pk\+\_\+encryption}{\+[identity\+\_\+encr\+\_\+\+PUBLICKEYBYTES]\+}\end{DoxyParamCaption})}
+
+\Hypertarget{identity_8h_a4d2426b4684999cc48be602ef396bfb7}\index{identity.h@{identity.h}!identity\_generate@{identity\_generate}}
+\index{identity\_generate@{identity\_generate}!identity.h@{identity.h}}
+\doxysubsubsection{\texorpdfstring{identity\_generate()}{identity\_generate()}}
+{\footnotesize\ttfamily \label{identity_8h_a4d2426b4684999cc48be602ef396bfb7} 
+\doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\+\_\+t}} identity\+\_\+generate (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{master\+\_\+key}{\+[identity\+\_\+\+MASTERKEYBYTES]\+, }\item[{uint8\+\_\+t}]{sk\+\_\+signature}{\+[identity\+\_\+sign\+\_\+\+SECRETKEYBYTES]\+, }\item[{uint8\+\_\+t}]{pk\+\_\+signature}{\+[identity\+\_\+sign\+\_\+\+PUBLICKEYBYTES]\+, }\item[{uint8\+\_\+t}]{sk\+\_\+encryption}{\+[identity\+\_\+encr\+\_\+\+SECRETKEYBYTES]\+, }\item[{uint8\+\_\+t}]{pk\+\_\+encryption}{\+[identity\+\_\+encr\+\_\+\+PUBLICKEYBYTES]\+}\end{DoxyParamCaption})}
+

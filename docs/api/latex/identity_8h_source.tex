@@ -1,0 +1,37 @@
+\doxysection{identity.\+h}
+\hypertarget{identity_8h_source}{}\label{identity_8h_source}\index{crypto/include/crypto/identity.h@{crypto/include/crypto/identity.h}}
+\doxymbox{\hyperlink{identity_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <sodium/crypto\_box.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sodium/crypto\_hash\_sha256.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <sodium/crypto\_sign.h>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <sodium.h>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{result_8h}{shared/result.h}}"{}}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ identity\_MASTERKEYBYTES\ crypto\_box\_SEEDBYTES}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ identity\_sign\_SECRETKEYBYTES\ crypto\_sign\_SECRETKEYBYTES}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ identity\_sign\_PUBLICKEYBYTES\ crypto\_sign\_PUBLICKEYBYTES}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#define\ identity\_encr\_SECRETKEYBYTES\ crypto\_box\_SECRETKEYBYTES}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#define\ identity\_encr\_PUBLICKEYBYTES\ crypto\_box\_PUBLICKEYBYTES}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \doxymbox{\hyperlink{identity_8h_a4d2426b4684999cc48be602ef396bfb7}{identity\_generate}}(}
+\DoxyCodeLine{00018\ \ \ \ \ uint8\_t\ master\_key[\doxymbox{\hyperlink{identity_8h_aaaa5d782a209df9d4b96dd536baeab68}{identity\_MASTERKEYBYTES}}],}
+\DoxyCodeLine{00019\ \ \ \ \ uint8\_t\ sk\_signature[\doxymbox{\hyperlink{identity_8h_ac0aca7d28010844e7a11f99d6aa99854}{identity\_sign\_SECRETKEYBYTES}}],}
+\DoxyCodeLine{00020\ \ \ \ \ uint8\_t\ pk\_signature[\doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\_sign\_PUBLICKEYBYTES}}],}
+\DoxyCodeLine{00021\ \ \ \ \ uint8\_t\ sk\_encryption[\doxymbox{\hyperlink{identity_8h_a93b1cc05866e4efad4448ec86ac832c4}{identity\_encr\_SECRETKEYBYTES}}],}
+\DoxyCodeLine{00022\ \ \ \ \ uint8\_t\ pk\_encryption[\doxymbox{\hyperlink{identity_8h_aaf87e49eeff5d72ffa55789c49a8161e}{identity\_encr\_PUBLICKEYBYTES}}]}
+\DoxyCodeLine{00023\ );}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \doxymbox{\hyperlink{identity_8h_ab9511f3fcaf437899bab4cd3e994cf56}{identity\_from\_master\_key}}(}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ master\_key[\doxymbox{\hyperlink{identity_8h_aaaa5d782a209df9d4b96dd536baeab68}{identity\_MASTERKEYBYTES}}],}
+\DoxyCodeLine{00027\ \ \ \ \ uint8\_t\ sk\_signature[\doxymbox{\hyperlink{identity_8h_ac0aca7d28010844e7a11f99d6aa99854}{identity\_sign\_SECRETKEYBYTES}}],}
+\DoxyCodeLine{00028\ \ \ \ \ uint8\_t\ pk\_signature[\doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\_sign\_PUBLICKEYBYTES}}],}
+\DoxyCodeLine{00029\ \ \ \ \ uint8\_t\ sk\_encryption[\doxymbox{\hyperlink{identity_8h_a93b1cc05866e4efad4448ec86ac832c4}{identity\_encr\_SECRETKEYBYTES}}],}
+\DoxyCodeLine{00030\ \ \ \ \ uint8\_t\ pk\_encryption[\doxymbox{\hyperlink{identity_8h_aaf87e49eeff5d72ffa55789c49a8161e}{identity\_encr\_PUBLICKEYBYTES}}]}
+\DoxyCodeLine{00031\ );}
+
+\end{DoxyCode}

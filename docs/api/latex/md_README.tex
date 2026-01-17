@@ -1,0 +1,99 @@
+\chapter{Messenger }
+\hypertarget{md_README}{}\label{md_README}\index{Messenger@{Messenger}}
+\label{md_README_autotoc_md10}%
+\Hypertarget{md_README_autotoc_md10}%
+
+
+A zero-\/trust, end-\/to-\/end encrypted messenger implemented in pure C.
+
+This project focuses on cryptographic correctness, architectural clarity, and long-\/term maintainability. It is designed as a portable core library with untrusted servers and platform-\/specific clients built on top. \hypertarget{md_README_autotoc_md11}{}\doxysection{\texorpdfstring{Project Status}{Project Status}}\label{md_README_autotoc_md11}
+🚧 {\bfseries{Early development /\+ experimental}}
+
+Currently implemented:\+
+\begin{DoxyItemize}
+\item account creation from master key
+\item account import from master key
+\item cryptographic identity verification
+\end{DoxyItemize}
+
+Networking, protocol implementation, and UI are under active design. \hypertarget{md_README_autotoc_md12}{}\doxysection{\texorpdfstring{Philosophy}{Philosophy}}\label{md_README_autotoc_md12}
+This messenger is built on a strict {\bfseries{zero-\/trust model}}.
+\begin{DoxyItemize}
+\item no phone numbers
+\item no email addresses
+\item no passwords
+\item no implicit trust in servers
+\end{DoxyItemize}
+
+All trust is derived exclusively from cryptography. The server acts as an untrusted, dumb store for encrypted data and public keys.
+
+A detailed description of the design principles can be found in
+\begin{DoxyItemize}
+\item docs/\+philosophy.md 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md13}{}\doxysection{\texorpdfstring{Architecture Overview}{Architecture Overview}}\label{md_README_autotoc_md13}
+The project is structured as a layered system:\+
+
+
+\begin{DoxyItemize}
+\item {\bfseries{core/\+}} — messenger-\/specific logic and rules
+\item {\bfseries{crypto/\+}} — cryptographic primitives and abstractions
+\item {\bfseries{shared/\+}} — low-\/level, dependency-\/free utilities
+\item {\bfseries{server/\+}} — untrusted message storage and routing
+\item {\bfseries{tests/\+}} — unit and integration tests
+\end{DoxyItemize}
+
+A high-\/level architectural overview is available in:\+
+\begin{DoxyItemize}
+\item docs/\+architecture.md 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md14}{}\doxysection{\texorpdfstring{Building}{Building}}\label{md_README_autotoc_md14}
+The project uses {\bfseries{CMake}} as its build system. \hypertarget{md_README_autotoc_md15}{}\doxysubsection{\texorpdfstring{Requirements}{Requirements}}\label{md_README_autotoc_md15}
+
+\begin{DoxyItemize}
+\item C compiler with C11 support (GCC or Clang)
+\item CMake ≥ 3.\+16
+\item libsodium
+\item cmocka
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md16}{}\doxysubsection{\texorpdfstring{Build Steps}{Build Steps}}\label{md_README_autotoc_md16}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/Wemis/messenger.git}
+\DoxyCodeLine{cd\ messenger}
+\DoxyCodeLine{}
+\DoxyCodeLine{cmake\ -\/B\ build/}
+\DoxyCodeLine{cmake\ -\/-\/build\ build/}
+
+\end{DoxyCode}
+ The build produces:\+
+\begin{DoxyItemize}
+\item a core static library
+\item supporting libraries
+\item test binaries 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md17}{}\doxysection{\texorpdfstring{Documentation}{Documentation}}\label{md_README_autotoc_md17}
+All project documentation is located in the {\ttfamily docs/\+} directory. \hypertarget{md_README_autotoc_md18}{}\doxysubsection{\texorpdfstring{Key Documents}{Key Documents}}\label{md_README_autotoc_md18}
+
+\begin{DoxyItemize}
+\item docs/\+philosophy.md -\/ project principles and trust model
+\item docs/\+architecture.md -\/ system architecture
+\item \href{docs/RFC}{\texttt{docs/\+rfc}} -\/ RFCs documents 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md19}{}\doxysubsection{\texorpdfstring{Development Guidelines}{Development Guidelines}}\label{md_README_autotoc_md19}
+
+\begin{DoxyItemize}
+\item docs/\+development/\+workflow.md
+\item docs/\+development/\+commits.md
+\item docs/\+coding/\+style.md 
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md20}{}\doxysection{\texorpdfstring{Contributing}{Contributing}}\label{md_README_autotoc_md20}
+Contributions are welcome, but the project follows strict architectural ~\newline
+ and security guidelines.
+
+Before contributing, please read:\+
+\begin{DoxyItemize}
+\item \doxysectlink{md_CONTRIBUTING}{CONTRIBUTING.md}{0}
+\end{DoxyItemize}
+
+All contributions must:\+
+\begin{DoxyItemize}
+\item follow the documented coding style
+\item respect architectural boundaries
+\item include tests where applicable
+\item avoid introducing implicit trust assumptions 
+\end{DoxyItemize}

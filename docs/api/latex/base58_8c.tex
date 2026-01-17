@@ -1,0 +1,118 @@
+\doxysection{shared/\+src/\+base58.c File Reference}
+\hypertarget{base58_8c}{}\label{base58_8c}\index{shared/src/base58.c@{shared/src/base58.c}}
+{\ttfamily \+\#include $<$arpa/\+inet.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdbool.\+h$>$}\newline
+{\ttfamily \+\#include $<$stddef.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include $<$string.\+h$>$}\newline
+{\ttfamily \+\#include "{}shared/\+base58.\+h"{}}\newline
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\+\#define \doxymbox{\hyperlink{base58_8c_ae7ba6c124e2fa8c1448c7ea6fde97630}{b58\+\_\+almostmaxint\+\_\+bits}}~(sizeof(\doxymbox{\hyperlink{base58_8c_a60ea85f089a69ce50b9791f28119dcc8}{b58\+\_\+almostmaxint\+\_\+t}}) \texorpdfstring{$\ast$}{*} 8)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef uint64\+\_\+t \doxymbox{\hyperlink{base58_8c_a8e2d9717b7bdec25073c5d7066d81133}{b58\+\_\+maxint\+\_\+t}}
+\item 
+typedef uint32\+\_\+t \doxymbox{\hyperlink{base58_8c_a60ea85f089a69ce50b9791f28119dcc8}{b58\+\_\+almostmaxint\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{base58_8c_ace0e1d88e939d18316cf7bd4962d5263}{b58tobin}} (void \texorpdfstring{$\ast$}{*}bin, size\+\_\+t \texorpdfstring{$\ast$}{*}binszp, const char \texorpdfstring{$\ast$}{*}b58, size\+\_\+t b58sz)
+\item 
+bool \doxymbox{\hyperlink{base58_8c_a792834ac47fc08d55ec232c8f5f65bf9}{b58enc}} (char \texorpdfstring{$\ast$}{*}b58, size\+\_\+t \texorpdfstring{$\ast$}{*}b58sz, const void \texorpdfstring{$\ast$}{*}data, size\+\_\+t binsz)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static const int8\+\_\+t \doxymbox{\hyperlink{base58_8c_a5adee3f1316a026be4c63005069b6071}{b58digits\+\_\+map}} \+[$\,$]\+
+\item 
+static const \doxymbox{\hyperlink{base58_8c_a60ea85f089a69ce50b9791f28119dcc8}{b58\+\_\+almostmaxint\+\_\+t}} \doxymbox{\hyperlink{base58_8c_a93c4cc87c4cf9e40846eafed630a7942}{b58\+\_\+almostmaxint\+\_\+mask}} = ((((\doxymbox{\hyperlink{base58_8c_a8e2d9717b7bdec25073c5d7066d81133}{b58\+\_\+maxint\+\_\+t}})1) $<$$<$ \doxymbox{\hyperlink{base58_8c_ae7ba6c124e2fa8c1448c7ea6fde97630}{b58\+\_\+almostmaxint\+\_\+bits}}) -\/ 1)
+\item 
+static const char \doxymbox{\hyperlink{base58_8c_a3e19b9fcd9a9983cad86a79c99e7d12e}{b58digits\+\_\+ordered}} \+[$\,$]\+ = "{}123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"{}
+\end{DoxyCompactItemize}
+
+
+\label{doc-define-members}
+\Hypertarget{base58_8c_doc-define-members}
+\doxysubsection{Macro Definition Documentation}
+\Hypertarget{base58_8c_ae7ba6c124e2fa8c1448c7ea6fde97630}\index{base58.c@{base58.c}!b58\_almostmaxint\_bits@{b58\_almostmaxint\_bits}}
+\index{b58\_almostmaxint\_bits@{b58\_almostmaxint\_bits}!base58.c@{base58.c}}
+\doxysubsubsection{\texorpdfstring{b58\_almostmaxint\_bits}{b58\_almostmaxint\_bits}}
+{\footnotesize\ttfamily \label{base58_8c_ae7ba6c124e2fa8c1448c7ea6fde97630} 
+\+\#define b58\+\_\+almostmaxint\+\_\+bits~(sizeof(\doxymbox{\hyperlink{base58_8c_a60ea85f089a69ce50b9791f28119dcc8}{b58\+\_\+almostmaxint\+\_\+t}}) \texorpdfstring{$\ast$}{*} 8)}
+
+
+
+\label{doc-typedef-members}
+\Hypertarget{base58_8c_doc-typedef-members}
+\doxysubsection{Typedef Documentation}
+\Hypertarget{base58_8c_a60ea85f089a69ce50b9791f28119dcc8}\index{base58.c@{base58.c}!b58\_almostmaxint\_t@{b58\_almostmaxint\_t}}
+\index{b58\_almostmaxint\_t@{b58\_almostmaxint\_t}!base58.c@{base58.c}}
+\doxysubsubsection{\texorpdfstring{b58\_almostmaxint\_t}{b58\_almostmaxint\_t}}
+{\footnotesize\ttfamily \label{base58_8c_a60ea85f089a69ce50b9791f28119dcc8} 
+typedef uint32\+\_\+t \doxymbox{\hyperlink{base58_8c_a60ea85f089a69ce50b9791f28119dcc8}{b58\+\_\+almostmaxint\+\_\+t}}}
+
+\Hypertarget{base58_8c_a8e2d9717b7bdec25073c5d7066d81133}\index{base58.c@{base58.c}!b58\_maxint\_t@{b58\_maxint\_t}}
+\index{b58\_maxint\_t@{b58\_maxint\_t}!base58.c@{base58.c}}
+\doxysubsubsection{\texorpdfstring{b58\_maxint\_t}{b58\_maxint\_t}}
+{\footnotesize\ttfamily \label{base58_8c_a8e2d9717b7bdec25073c5d7066d81133} 
+typedef uint64\+\_\+t \doxymbox{\hyperlink{base58_8c_a8e2d9717b7bdec25073c5d7066d81133}{b58\+\_\+maxint\+\_\+t}}}
+
+
+
+\label{doc-func-members}
+\Hypertarget{base58_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{base58_8c_a792834ac47fc08d55ec232c8f5f65bf9}\index{base58.c@{base58.c}!b58enc@{b58enc}}
+\index{b58enc@{b58enc}!base58.c@{base58.c}}
+\doxysubsubsection{\texorpdfstring{b58enc()}{b58enc()}}
+{\footnotesize\ttfamily \label{base58_8c_a792834ac47fc08d55ec232c8f5f65bf9} 
+bool b58enc (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{b58}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{b58sz}{, }\item[{const void \texorpdfstring{$\ast$}{*}}]{data}{, }\item[{size\+\_\+t}]{binsz}{}\end{DoxyParamCaption})}
+
+\Hypertarget{base58_8c_ace0e1d88e939d18316cf7bd4962d5263}\index{base58.c@{base58.c}!b58tobin@{b58tobin}}
+\index{b58tobin@{b58tobin}!base58.c@{base58.c}}
+\doxysubsubsection{\texorpdfstring{b58tobin()}{b58tobin()}}
+{\footnotesize\ttfamily \label{base58_8c_ace0e1d88e939d18316cf7bd4962d5263} 
+bool b58tobin (\begin{DoxyParamCaption}\item[{void \texorpdfstring{$\ast$}{*}}]{bin}{, }\item[{size\+\_\+t \texorpdfstring{$\ast$}{*}}]{binszp}{, }\item[{const char \texorpdfstring{$\ast$}{*}}]{b58}{, }\item[{size\+\_\+t}]{b58sz}{}\end{DoxyParamCaption})}
+
+
+
+\label{doc-var-members}
+\Hypertarget{base58_8c_doc-var-members}
+\doxysubsection{Variable Documentation}
+\Hypertarget{base58_8c_a93c4cc87c4cf9e40846eafed630a7942}\index{base58.c@{base58.c}!b58\_almostmaxint\_mask@{b58\_almostmaxint\_mask}}
+\index{b58\_almostmaxint\_mask@{b58\_almostmaxint\_mask}!base58.c@{base58.c}}
+\doxysubsubsection{\texorpdfstring{b58\_almostmaxint\_mask}{b58\_almostmaxint\_mask}}
+{\footnotesize\ttfamily \label{base58_8c_a93c4cc87c4cf9e40846eafed630a7942} 
+const \doxymbox{\hyperlink{base58_8c_a60ea85f089a69ce50b9791f28119dcc8}{b58\+\_\+almostmaxint\+\_\+t}} b58\+\_\+almostmaxint\+\_\+mask = ((((\doxymbox{\hyperlink{base58_8c_a8e2d9717b7bdec25073c5d7066d81133}{b58\+\_\+maxint\+\_\+t}})1) $<$$<$ \doxymbox{\hyperlink{base58_8c_ae7ba6c124e2fa8c1448c7ea6fde97630}{b58\+\_\+almostmaxint\+\_\+bits}}) -\/ 1)\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{base58_8c_a5adee3f1316a026be4c63005069b6071}\index{base58.c@{base58.c}!b58digits\_map@{b58digits\_map}}
+\index{b58digits\_map@{b58digits\_map}!base58.c@{base58.c}}
+\doxysubsubsection{\texorpdfstring{b58digits\_map}{b58digits\_map}}
+{\footnotesize\ttfamily \label{base58_8c_a5adee3f1316a026be4c63005069b6071} 
+const int8\+\_\+t b58digits\+\_\+map\+[$\,$]\+\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value:\+}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ =\ \{}
+\DoxyCodeLine{\ \ \ \ -\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,\ -\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,}
+\DoxyCodeLine{\ \ \ \ -\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,\ -\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,}
+\DoxyCodeLine{\ \ \ \ -\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,\ -\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,}
+\DoxyCodeLine{\ \ \ \ -\/1,\ 0,\ 1,\ 2,\ 3,\ 4,\ 5,\ 6,\ \ 7,\ 8,-\/1,-\/1,-\/1,-\/1,-\/1,-\/1,}
+\DoxyCodeLine{\ \ \ \ -\/1,\ 9,10,11,12,13,14,15,\ 16,-\/1,17,18,19,20,21,-\/1,}
+\DoxyCodeLine{\ \ \ \ 22,23,24,25,26,27,28,29,\ 30,31,32,-\/1,-\/1,-\/1,-\/1,-\/1,}
+\DoxyCodeLine{\ \ \ \ -\/1,33,34,35,36,37,38,39,\ 40,41,42,43,-\/1,44,45,46,}
+\DoxyCodeLine{\ \ \ \ 47,48,49,50,51,52,53,54,\ 55,56,57,-\/1,-\/1,-\/1,-\/1,-\/1,}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\Hypertarget{base58_8c_a3e19b9fcd9a9983cad86a79c99e7d12e}\index{base58.c@{base58.c}!b58digits\_ordered@{b58digits\_ordered}}
+\index{b58digits\_ordered@{b58digits\_ordered}!base58.c@{base58.c}}
+\doxysubsubsection{\texorpdfstring{b58digits\_ordered}{b58digits\_ordered}}
+{\footnotesize\ttfamily \label{base58_8c_a3e19b9fcd9a9983cad86a79c99e7d12e} 
+const char b58digits\+\_\+ordered\+[$\,$]\+ = "{}123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"{}\hspace{0.3cm}{\ttfamily [static]}}
+

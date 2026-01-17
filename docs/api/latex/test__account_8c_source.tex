@@ -1,0 +1,131 @@
+\doxysection{test\+\_\+account.\+c}
+\hypertarget{test__account_8c_source}{}\label{test__account_8c_source}\index{tests/core/test\_account.c@{tests/core/test\_account.c}}
+\doxymbox{\hyperlink{test__account_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <stdarg.h>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <setjmp.h>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <cmocka.h>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{account_8h}{core/account.h}}"{}}}
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{result_8h}{shared/result.h}}"{}}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{test__account_8c_abd8e1a632c49b0cd62d154d034646e59}{test\_account\_create}}()\ \{}
+\DoxyCodeLine{00011\ \ \ \ \ \doxymbox{\hyperlink{structUser}{User}}\ u\ =\ \{0\};}
+\DoxyCodeLine{00012\ \ \ \ \ \doxymbox{\hyperlink{structUser}{User}}\ u2\ =\ \{0\};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name\ =\ \textcolor{stringliteral}{"{}Danylo"{}};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *prefix\ =\ \textcolor{stringliteral}{"{}danyloxx"{}};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ res\ =\ \doxymbox{\hyperlink{account_8h_a20716d1bb073c43c9ee4395a1fe77158}{account\_create}}(\&u,\ name,\ prefix);}
+\DoxyCodeLine{00018\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ res2\ =\ \doxymbox{\hyperlink{account_8h_a20716d1bb073c43c9ee4395a1fe77158}{account\_create}}(\&u2,\ name,\ prefix);}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00020\ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\(\backslash\)nName:\ \ \ \ \ \ \ \ \ \ \%s\(\backslash\)n"{}},\ u.\doxymbox{\hyperlink{structUser_a3d3986173c1812256969a5940d0175f2}{name}});}
+\DoxyCodeLine{00021\ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}Username:\ \ \ \ \ \ \%s\(\backslash\)n"{}},\ u.\doxymbox{\hyperlink{structUser_a28bd0803a14a0453439bb93d0a42cfa6}{username}});}
+\DoxyCodeLine{00022\ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}User\ ID:\ \ \ \ \ \ \ "{}});}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 32;\ i++)\ \{}
+\DoxyCodeLine{00024\ \ \ \ \ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\%02x"{}},\ u.\doxymbox{\hyperlink{structUser_a052b7b380d57163cc4ab3a127269cde8}{user\_id}}[i]);}
+\DoxyCodeLine{00025\ \ \ \ \ \}}
+\DoxyCodeLine{00026\ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\(\backslash\)nsk\_signature:\ \ "{}});}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 64;\ i++)\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\%02x"{}},\ u.\doxymbox{\hyperlink{structUser_ad99a5076740003e738a9b6ae9950771e}{sk\_signature}}[i]);}
+\DoxyCodeLine{00029\ \ \ \ \ \}}
+\DoxyCodeLine{00030\ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\(\backslash\)npk\_signature:\ \ "{}});}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 32;\ i++)\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\%02x"{}},\ u.\doxymbox{\hyperlink{structUser_af6bca6fac31fc2e2ccff0faa775d4182}{pk\_signature}}[i]);}
+\DoxyCodeLine{00033\ \ \ \ \ \}}
+\DoxyCodeLine{00034\ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\(\backslash\)nsk\_encryption:\ "{}});}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 32;\ i++)\ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\%02x"{}},\ u.\doxymbox{\hyperlink{structUser_ab2606fcd8d21401e3a3c768eb20cb534}{sk\_encryption}}[i]);}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\(\backslash\)npk\_encryption:\ "{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 32;\ i++)\ \{}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\%02x"{}},\ u.\doxymbox{\hyperlink{structUser_a61e8afeaeaf21757cff34f7f6a5717d6}{pk\_encryption}}[i]);}
+\DoxyCodeLine{00041\ \ \ \ \ \}}
+\DoxyCodeLine{00042\ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\(\backslash\)nMaster\ Key:\ \ \ \ "{}});}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 32;\ i++)\ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\%02x"{}},\ u.\doxymbox{\hyperlink{structUser_a5be9aba5c9c6a11fb02e7f6093bf2de2}{master\_key}}[i]);}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\(\backslash\)nSignature:\ \ \ \ \ "{}});}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 64;\ i++)\ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\%02x"{}},\ u.\doxymbox{\hyperlink{structUser_aa10100cc88b1f58ab91095c359b90437}{signature}}[i]);}
+\DoxyCodeLine{00049\ \ \ \ \ \}}
+\DoxyCodeLine{00050\ \ \ \ \ print\_message(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \ \ \ \ assert\_int\_equal(res,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}});}
+\DoxyCodeLine{00053\ \ \ \ \ assert\_int\_equal(res2,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}});}
+\DoxyCodeLine{00054\ \ \ \ \ assert\_memory\_not\_equal(u.\doxymbox{\hyperlink{structUser_a052b7b380d57163cc4ab3a127269cde8}{user\_id}},\ u2.\doxymbox{\hyperlink{structUser_a052b7b380d57163cc4ab3a127269cde8}{user\_id}},\ \doxymbox{\hyperlink{account_8h_a8a056ee36cfa96018c1ee363e80d55e5}{account\_USERIDBYTES}});}
+\DoxyCodeLine{00055\ \}}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{test__account_8c_a909df37edb4a43d04f02ea52587617ab}{test\_account\_import}}(\textcolor{keywordtype}{void}\ **state)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ (void)\ state;}
+\DoxyCodeLine{00059\ \ \ \ \ \doxymbox{\hyperlink{structUser}{User}}\ u1\ =\ \{0\};}
+\DoxyCodeLine{00060\ \ \ \ \ \doxymbox{\hyperlink{structUser}{User}}\ u2\ =\ \{0\};}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ master\_key[32]\ =\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ 0x3a,\ 0x2e,\ 0x14,\ 0xb5,\ 0xa9,\ 0x52,\ 0x6d,\ 0x62,}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ 0xe5,\ 0x7a,\ 0x89,\ 0x5e,\ 0x91,\ 0x7e,\ 0xf9,\ 0x35,}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ 0xfa,\ 0x8a,\ 0xf3,\ 0x53,\ 0x8e,\ 0x0b,\ 0x2d,\ 0xbd,}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ 0x4a,\ 0xb5,\ 0x49,\ 0xc6,\ 0x5a,\ 0x98,\ 0x68,\ 0xa3}
+\DoxyCodeLine{00067\ \ \ \ \ \};}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ res1\ =\ \doxymbox{\hyperlink{account_8h_ad843559cecb3bfb5ce588d4087551f49}{account\_import}}(\&u1,\ master\_key);}
+\DoxyCodeLine{00070\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ res2\ =\ \doxymbox{\hyperlink{account_8h_ad843559cecb3bfb5ce588d4087551f49}{account\_import}}(\&u2,\ master\_key);}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ \ \ \ \ assert\_int\_equal(res1,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}});}
+\DoxyCodeLine{00073\ \ \ \ \ assert\_int\_equal(res2,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}});}
+\DoxyCodeLine{00074\ \ \ \ \ assert\_memory\_equal(u1.\doxymbox{\hyperlink{structUser_a052b7b380d57163cc4ab3a127269cde8}{user\_id}},\ u2.\doxymbox{\hyperlink{structUser_a052b7b380d57163cc4ab3a127269cde8}{user\_id}},\ \doxymbox{\hyperlink{account_8h_a8a056ee36cfa96018c1ee363e80d55e5}{account\_USERIDBYTES}});}
+\DoxyCodeLine{00075\ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{test__account_8c_a7660bebda4b90c1df2832304665aff24}{test\_account\_verify}}()\ \{}
+\DoxyCodeLine{00078\ \ \ \ \ \doxymbox{\hyperlink{structUser}{User}}\ u\_valid\ =\ \{0\};}
+\DoxyCodeLine{00079\ \ \ \ \ \doxymbox{\hyperlink{structUser}{User}}\ u\_invalid\ =\ \{0\};}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name\ =\ \textcolor{stringliteral}{"{}Alice"{}};}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *prefix\ =\ \textcolor{stringliteral}{"{}alice"{}};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ \doxymbox{\hyperlink{account_8h_a20716d1bb073c43c9ee4395a1fe77158}{account\_create}}(\&u\_valid,\ name,\ prefix);}
+\DoxyCodeLine{00085\ \ \ \ \ \doxymbox{\hyperlink{account_8h_a20716d1bb073c43c9ee4395a1fe77158}{account\_create}}(\&u\_invalid,\ name,\ prefix);}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ \textcolor{comment}{//\ It\ makes\ signature\ invalid}}
+\DoxyCodeLine{00088\ \ \ \ \ u\_invalid.\doxymbox{\hyperlink{structUser_aa10100cc88b1f58ab91095c359b90437}{signature}}[8]\ =\ 0xd9;}
+\DoxyCodeLine{00089\ \ \ \ \ u\_invalid.\doxymbox{\hyperlink{structUser_aa10100cc88b1f58ab91095c359b90437}{signature}}[2]\ =\ 0x04;}
+\DoxyCodeLine{00090\ \ \ \ \ u\_invalid.\doxymbox{\hyperlink{structUser_aa10100cc88b1f58ab91095c359b90437}{signature}}[36]\ =\ 0xf6;}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00092\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ res1\ =\ \doxymbox{\hyperlink{account_8h_a8fb41eef456547b8617defcdce6d298e}{account\_verify}}(\&u\_valid);}
+\DoxyCodeLine{00093\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ res2\ =\ \doxymbox{\hyperlink{account_8h_a8fb41eef456547b8617defcdce6d298e}{account\_verify}}(\&u\_invalid);}
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00095\ \ \ \ \ assert\_int\_equal(res1,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}});}
+\DoxyCodeLine{00096\ \ \ \ \ assert\_int\_equal(res2,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a8bb4e18c419643918878632b0698f8c2}{CORE\_ACCOUNT\_FORGED}});}
+\DoxyCodeLine{00097\ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00099\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{test__account_8c_ac8bc06d4a5c7eef58b6a24c3a0d4cf8a}{test\_account\_username\_verify\_integrity}}()\ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *username\_valid\ =\ \textcolor{stringliteral}{"{}danyloxx\#5n5WbNAMXjrcYS"{}};}
+\DoxyCodeLine{00101\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *username\_corrupted\ =\ \textcolor{stringliteral}{"{}daanyloxx\#5n5WbNAMXjrcYS"{}};}
+\DoxyCodeLine{00102\ }
+\DoxyCodeLine{00103\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ valid\ =\ \doxymbox{\hyperlink{account_8h_a79f6948718da99d3ea1ce13150bc1c79}{account\_username\_verify\_integrity}}(username\_valid);}
+\DoxyCodeLine{00104\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ corrupted\ =\ \doxymbox{\hyperlink{account_8h_a79f6948718da99d3ea1ce13150bc1c79}{account\_username\_verify\_integrity}}(username\_corrupted);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \ \ \ \ assert\_int\_equal(valid,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}});}
+\DoxyCodeLine{00107\ \ \ \ \ assert\_int\_not\_equal(corrupted,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}});}
+\DoxyCodeLine{00108\ \}}
+\DoxyCodeLine{00109\ }
+\DoxyCodeLine{00110\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{test__account_8c_a83c2a50215885eb92711231284dd1735}{test\_account\_username\_verify\_authenticity}}()\ \{}
+\DoxyCodeLine{00111\ \ \ \ \ \doxymbox{\hyperlink{structUser}{User}}\ u\ =\ \{0\};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00113\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *name\ =\ \textcolor{stringliteral}{"{}Danylo"{}};}
+\DoxyCodeLine{00114\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *prefix\ =\ \textcolor{stringliteral}{"{}danyloxx"{}};}
+\DoxyCodeLine{00115\ }
+\DoxyCodeLine{00116\ \ \ \ \ \doxymbox{\hyperlink{account_8h_a20716d1bb073c43c9ee4395a1fe77158}{account\_create}}(\&u,\ name,\ prefix);}
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ ok\ =\ \doxymbox{\hyperlink{account_8h_a6362d14f0077848de5b316d5dda4776f}{account\_username\_verify\_authenticity}}(u.\doxymbox{\hyperlink{structUser_a28bd0803a14a0453439bb93d0a42cfa6}{username}},\ u.\doxymbox{\hyperlink{structUser_a052b7b380d57163cc4ab3a127269cde8}{user\_id}});}
+\DoxyCodeLine{00119\ \ \ \ \ u.\doxymbox{\hyperlink{structUser_a052b7b380d57163cc4ab3a127269cde8}{user\_id}}[19]\ =\ 0xdf;}
+\DoxyCodeLine{00120\ \ \ \ \ u.\doxymbox{\hyperlink{structUser_a052b7b380d57163cc4ab3a127269cde8}{user\_id}}[3]\ =\ 0xa1;}
+\DoxyCodeLine{00121\ \ \ \ \ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ fail\ =\ \doxymbox{\hyperlink{account_8h_a6362d14f0077848de5b316d5dda4776f}{account\_username\_verify\_authenticity}}(u.\doxymbox{\hyperlink{structUser_a28bd0803a14a0453439bb93d0a42cfa6}{username}},\ u.\doxymbox{\hyperlink{structUser_a052b7b380d57163cc4ab3a127269cde8}{user\_id}});}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00123\ \ \ \ \ assert\_int\_equal(ok,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}});}
+\DoxyCodeLine{00124\ \ \ \ \ assert\_int\_equal(fail,\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3aa4b870d842583fc634fe3be4daad4451}{CORE\_ACCOUNT\_USERNAME\_FORGED}});}
+\DoxyCodeLine{00125\ \}}
+
+\end{DoxyCode}

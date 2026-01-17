@@ -1,0 +1,122 @@
+\doxysection{tests/\+core/\+test\+\_\+identity\+\_\+verify.c File Reference}
+\hypertarget{test__identity__verify_8c}{}\label{test__identity__verify_8c}\index{tests/core/test\_identity\_verify.c@{tests/core/test\_identity\_verify.c}}
+{\ttfamily \+\#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \+\#include $<$stddef.\+h$>$}\newline
+{\ttfamily \+\#include $<$stdint.\+h$>$}\newline
+{\ttfamily \+\#include $<$setjmp.\+h$>$}\newline
+{\ttfamily \+\#include $<$cmocka.\+h$>$}\newline
+{\ttfamily \+\#include $<$sys/\+select.\+h$>$}\newline
+{\ttfamily \+\#include "{}core/\+account.\+h"{}}\newline
+{\ttfamily \+\#include "{}shared/\+result.\+h"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_a73234c354f5f01ac07f7fec5eedf83ca}{test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+ok}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_a4a50fee5129152ea1eadeffdad824480}{test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+null\+\_\+username}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_a26631ca7f59cb8f77b06c3343b9471d0}{test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+invalid\+\_\+size}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_a601d2b5038541af029a9a3334c32ac62}{test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+missing\+\_\+separator}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_a12da4c778a189642c2aaf68e0af4a3de}{test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+invalid\+\_\+prefix\+\_\+size}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_a29b33331fdad75319d95df37890301f3}{test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+invalid\+\_\+symbol}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_af905d19010688422c00f23a2e9c08ef7}{test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+invalid\+\_\+checksum}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_ae434021ab4c92e7cf8bae6cd75e9cac5}{test\+\_\+username\+\_\+verify\+\_\+authenticity\+\_\+ok}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_a6dde4776ae8863fe04d66090df6f26fb}{test\+\_\+username\+\_\+verify\+\_\+authenticity\+\_\+corrupted\+\_\+username}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_af8f165db8b1e2f85ac7e30956c8cdc10}{test\+\_\+username\+\_\+verify\+\_\+authenticity\+\_\+forged}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_ad3fc91dc8cffcff0e6229742cece0ef3}{test\+\_\+account\+\_\+verify\+\_\+ok}} ()
+\item 
+static void \doxymbox{\hyperlink{test__identity__verify_8c_a0c14d9ee1efdf9a5dfd984faa8a6c5ae}{test\+\_\+account\+\_\+verify\+\_\+forged}} ()
+\item 
+int \doxymbox{\hyperlink{test__identity__verify_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+
+
+\label{doc-func-members}
+\Hypertarget{test__identity__verify_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{test__identity__verify_8c_a840291bc02cba5474a4cb46a9b9566fe}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!main@{main}}
+\index{main@{main}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_a840291bc02cba5474a4cb46a9b9566fe} 
+int main (\begin{DoxyParamCaption}\item[{void}]{}{}\end{DoxyParamCaption})}
+
+\Hypertarget{test__identity__verify_8c_a0c14d9ee1efdf9a5dfd984faa8a6c5ae}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_account\_verify\_forged@{test\_account\_verify\_forged}}
+\index{test\_account\_verify\_forged@{test\_account\_verify\_forged}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_account\_verify\_forged()}{test\_account\_verify\_forged()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_a0c14d9ee1efdf9a5dfd984faa8a6c5ae} 
+void test\+\_\+account\+\_\+verify\+\_\+forged (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_ad3fc91dc8cffcff0e6229742cece0ef3}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_account\_verify\_ok@{test\_account\_verify\_ok}}
+\index{test\_account\_verify\_ok@{test\_account\_verify\_ok}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_account\_verify\_ok()}{test\_account\_verify\_ok()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_ad3fc91dc8cffcff0e6229742cece0ef3} 
+void test\+\_\+account\+\_\+verify\+\_\+ok (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_a6dde4776ae8863fe04d66090df6f26fb}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_username\_verify\_authenticity\_corrupted\_username@{test\_username\_verify\_authenticity\_corrupted\_username}}
+\index{test\_username\_verify\_authenticity\_corrupted\_username@{test\_username\_verify\_authenticity\_corrupted\_username}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_username\_verify\_authenticity\_corrupted\_username()}{test\_username\_verify\_authenticity\_corrupted\_username()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_a6dde4776ae8863fe04d66090df6f26fb} 
+void test\+\_\+username\+\_\+verify\+\_\+authenticity\+\_\+corrupted\+\_\+username (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_af8f165db8b1e2f85ac7e30956c8cdc10}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_username\_verify\_authenticity\_forged@{test\_username\_verify\_authenticity\_forged}}
+\index{test\_username\_verify\_authenticity\_forged@{test\_username\_verify\_authenticity\_forged}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_username\_verify\_authenticity\_forged()}{test\_username\_verify\_authenticity\_forged()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_af8f165db8b1e2f85ac7e30956c8cdc10} 
+void test\+\_\+username\+\_\+verify\+\_\+authenticity\+\_\+forged (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_ae434021ab4c92e7cf8bae6cd75e9cac5}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_username\_verify\_authenticity\_ok@{test\_username\_verify\_authenticity\_ok}}
+\index{test\_username\_verify\_authenticity\_ok@{test\_username\_verify\_authenticity\_ok}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_username\_verify\_authenticity\_ok()}{test\_username\_verify\_authenticity\_ok()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_ae434021ab4c92e7cf8bae6cd75e9cac5} 
+void test\+\_\+username\+\_\+verify\+\_\+authenticity\+\_\+ok (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_af905d19010688422c00f23a2e9c08ef7}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_username\_verify\_integrity\_invalid\_checksum@{test\_username\_verify\_integrity\_invalid\_checksum}}
+\index{test\_username\_verify\_integrity\_invalid\_checksum@{test\_username\_verify\_integrity\_invalid\_checksum}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_username\_verify\_integrity\_invalid\_checksum()}{test\_username\_verify\_integrity\_invalid\_checksum()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_af905d19010688422c00f23a2e9c08ef7} 
+void test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+invalid\+\_\+checksum (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_a12da4c778a189642c2aaf68e0af4a3de}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_username\_verify\_integrity\_invalid\_prefix\_size@{test\_username\_verify\_integrity\_invalid\_prefix\_size}}
+\index{test\_username\_verify\_integrity\_invalid\_prefix\_size@{test\_username\_verify\_integrity\_invalid\_prefix\_size}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_username\_verify\_integrity\_invalid\_prefix\_size()}{test\_username\_verify\_integrity\_invalid\_prefix\_size()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_a12da4c778a189642c2aaf68e0af4a3de} 
+void test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+invalid\+\_\+prefix\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_a26631ca7f59cb8f77b06c3343b9471d0}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_username\_verify\_integrity\_invalid\_size@{test\_username\_verify\_integrity\_invalid\_size}}
+\index{test\_username\_verify\_integrity\_invalid\_size@{test\_username\_verify\_integrity\_invalid\_size}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_username\_verify\_integrity\_invalid\_size()}{test\_username\_verify\_integrity\_invalid\_size()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_a26631ca7f59cb8f77b06c3343b9471d0} 
+void test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+invalid\+\_\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_a29b33331fdad75319d95df37890301f3}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_username\_verify\_integrity\_invalid\_symbol@{test\_username\_verify\_integrity\_invalid\_symbol}}
+\index{test\_username\_verify\_integrity\_invalid\_symbol@{test\_username\_verify\_integrity\_invalid\_symbol}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_username\_verify\_integrity\_invalid\_symbol()}{test\_username\_verify\_integrity\_invalid\_symbol()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_a29b33331fdad75319d95df37890301f3} 
+void test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+invalid\+\_\+symbol (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_a601d2b5038541af029a9a3334c32ac62}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_username\_verify\_integrity\_missing\_separator@{test\_username\_verify\_integrity\_missing\_separator}}
+\index{test\_username\_verify\_integrity\_missing\_separator@{test\_username\_verify\_integrity\_missing\_separator}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_username\_verify\_integrity\_missing\_separator()}{test\_username\_verify\_integrity\_missing\_separator()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_a601d2b5038541af029a9a3334c32ac62} 
+void test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+missing\+\_\+separator (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_a4a50fee5129152ea1eadeffdad824480}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_username\_verify\_integrity\_null\_username@{test\_username\_verify\_integrity\_null\_username}}
+\index{test\_username\_verify\_integrity\_null\_username@{test\_username\_verify\_integrity\_null\_username}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_username\_verify\_integrity\_null\_username()}{test\_username\_verify\_integrity\_null\_username()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_a4a50fee5129152ea1eadeffdad824480} 
+void test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+null\+\_\+username (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\Hypertarget{test__identity__verify_8c_a73234c354f5f01ac07f7fec5eedf83ca}\index{test\_identity\_verify.c@{test\_identity\_verify.c}!test\_username\_verify\_integrity\_ok@{test\_username\_verify\_integrity\_ok}}
+\index{test\_username\_verify\_integrity\_ok@{test\_username\_verify\_integrity\_ok}!test\_identity\_verify.c@{test\_identity\_verify.c}}
+\doxysubsubsection{\texorpdfstring{test\_username\_verify\_integrity\_ok()}{test\_username\_verify\_integrity\_ok()}}
+{\footnotesize\ttfamily \label{test__identity__verify_8c_a73234c354f5f01ac07f7fec5eedf83ca} 
+void test\+\_\+username\+\_\+verify\+\_\+integrity\+\_\+ok (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+

@@ -1,0 +1,25 @@
+\doxysection{sign.\+h}
+\hypertarget{sign_8h_source}{}\label{sign_8h_source}\index{crypto/include/crypto/sign.h@{crypto/include/crypto/sign.h}}
+\doxymbox{\hyperlink{sign_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <sodium/crypto\_sign.h>}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{identity_8h}{identity.h}}"{}}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{result_8h}{shared/result.h}}"{}}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ signature\_BYTES\ crypto\_sign\_BYTES}}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00011\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \doxymbox{\hyperlink{sign_8h_ac269aef21c7c1b0931a65612ec8c594d}{cryptosign}}(}
+\DoxyCodeLine{00012\ \ \ \ \ uint8\_t\ signature[\doxymbox{\hyperlink{sign_8h_ab63961135f8f5d9b93bc6d0394c1146a}{signature\_BYTES}}],\ \textcolor{keyword}{const}\ uint8\_t\ *message,\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ message\_len,}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ sk[\doxymbox{\hyperlink{identity_8h_ac0aca7d28010844e7a11f99d6aa99854}{identity\_sign\_SECRETKEYBYTES}}]}
+\DoxyCodeLine{00014\ );}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \doxymbox{\hyperlink{result_8h_ad75d91d2a2ad02fb4a39a5fc8c4d4ec3}{result\_t}}\ \doxymbox{\hyperlink{sign_8h_a143a755beeffcaf49ed5ced713408a67}{crypto\_sign\_verify}}(}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keyword}{const}\ uint8\_t\ signature[\doxymbox{\hyperlink{sign_8h_ab63961135f8f5d9b93bc6d0394c1146a}{signature\_BYTES}}],\ \textcolor{keyword}{const}\ uint8\_t\ *message,}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{long}\ \textcolor{keywordtype}{long}\ message\_len,\ \textcolor{keyword}{const}\ uint8\_t\ pk[\doxymbox{\hyperlink{identity_8h_a94cb0eeb35acb9984910776fd9be2155}{identity\_sign\_PUBLICKEYBYTES}}]}
+\DoxyCodeLine{00019\ );}
+
+\end{DoxyCode}
